@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+In any 12-month period has the business gone over the VAT-registration threshold?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form method="post">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-heading-xl">
+                                In any 12-month period has the business gone over the VAT-registration threshold?
+                            </h1>
+                        </legend>
+                        <p>
+                            £85,000 is the current VAT-registration threshold. It is the amount of VAT-taxable sales
+                            the business can make before it has to register for VAT.
+                        </p>
+
+                        <details class="govuk-details" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    What to include as VAT-taxable sales?
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <p>Assume the business is already VAT-registered. Include the sale of all goods and
+                                    services
+                                    that are not
+                                    exempt from VAT. You must include goods and services that have a 0% VAT rate.</p>
+
+                                <p>Find out more about <a
+                                        href="https://www.gov.uk/guidance/rates-of-vat-on-different-goods-and-services"
+                                        target="_blank">which goods and services are exempt from VAT (opens in a new tab)</a>.
+                                </p>
+                            </div>
+                        </details>
+
+                        <div class="govuk-radios govuk-radios--conditional " data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="how-contacted-conditional" name="threshold"
+                                    type="radio" value="Yes"
+                                    data-aria-controls="conditional-how-contacted-conditional">
+                                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                                    Yes
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                                id="conditional-how-contacted-conditional">
+                                <div class="govuk-form-group">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                        <h1 class="govuk-heading-m">
+                                            What month did the business first go over the threshold?
+                                        </h1>
+                                    </legend>
+                                    <div id="cost-hint" class="govuk-hint">
+                                        For example, 02 2017
+                                      </div>
+                                    <div class="govuk-date-input" id="passport-issued">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label"
+                                                    for="passport-issued-month">
+                                                    Month
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                                    id="passport-issued-month" name="passport-issued-month"
+                                                    type="number" pattern="[0-9]*">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label"
+                                                    for="passport-issued-year">
+                                                    Year
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                                    id="passport-issued-year" name="passport-issued-year" type="number"
+                                                    pattern="[0-9]*">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="how-contacted-conditional" name="threshold"
+                                    type="radio" value="No">
+                                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <button class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

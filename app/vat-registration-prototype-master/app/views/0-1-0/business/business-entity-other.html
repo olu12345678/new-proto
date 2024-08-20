@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What type of business are you reigstering?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">Organisation details</span>
+                            <h1 class="govuk-fieldset__heading">
+                                What type of business do you want to register for VAT?
+                            </h1>
+                        </legend>
+                        <details class="govuk-details" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    What type of business entity am I?
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <p><b>Individual</b><br>Brief description</p>
+                                <p><b>Non UK Company</b><br>Brief description</p>
+                                <p><b>Charitable Incorporated Association</b><br>Brief description</p>
+                                <p><b>Trust</b><br>Brief description</p>
+                                <p><b>Registered Society</b><br>Brief description</p>
+                                <p><b>Unincorporated Association</b><br>Brief description</p>
+                                <p><b>Government Organisation or Public Body</b><br>Brief description</p>
+                                <p><b>Division</b><br>Brief description</p>
+
+                            </div>
+                        </details>
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="individual" name="type_of_business" type="radio"
+                                    value="Individual">
+                                <label class="govuk-label govuk-radios__label" for="individual">
+                                    Individual (NETP or Foreign National)
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="non_uk_company" name="type_of_business"
+                                    type="radio" value="Non UK Company">
+                                <label class="govuk-label govuk-radios__label" for="non_UK_company">
+                                    Non UK Company, not established in UK
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="CIO" name="type_of_business" type="radio"
+                                    value="CIO">
+                                <label class="govuk-label govuk-radios__label" for="CIO">
+                                    Charitable Incorporated Association (CIO)
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="trust" name="type_of_business" type="radio"
+                                    value="Trust">
+                                <label class="govuk-label govuk-radios__label" for="trust">
+                                    Trust (non-incorporated)
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="registered_society" name="type_of_business"
+                                    type="radio" value="Registered Society">
+                                <label class="govuk-label govuk-radios__label" for="registered_society">
+                                    Registered Society
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="unincorporated_association"
+                                    name="type_of_business" type="radio" value="Unincorporated Association">
+                                <label class="govuk-label govuk-radios__label" for="unincorporated_association">
+                                    Unincorporated Association
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="government_organisation" name="type_of_business"
+                                    type="radio" value="Government Organisation or Public Body">
+                                <label class="govuk-label govuk-radios__label" for="government_organisation">
+                                    Government Organisation or Public Body
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="division" name="type_of_business" type="radio"
+                                    value="Division">
+                                <label class="govuk-label govuk-radios__label" for="division">
+                                    Division
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save and come back later
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

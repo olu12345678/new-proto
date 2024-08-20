@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+SWALES LTD must register for VAT using a different service
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Will SWALES LTD do any of the following international activities over the next 12 months?
+                        </h1>
+                    </legend>
+                    <p>
+                        Tell us if SWALES LTD will:
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>
+                                export goods or services to EU countries
+                            </li>
+                            <li>
+                                import goods or services from EU countries
+                            </li>
+                            <li>
+                                sell assets that it bought from a country outside the EU and claimed a VAT refund on
+                            </li>
+                            <li>
+                                do all of its business outside the UK
+                            </li>
+                            <li>
+                                have its head office outside the UK
+                            </li>
+                        </ul>
+                    </p>
+
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item" data-target="date-fields">
+                            <input class="govuk-radios__input" id="threshold-yes" name="international" type="radio"
+                                value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="threshold-yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="international" type="radio"
+                                value="No">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                        Save and continue
+                    </button>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

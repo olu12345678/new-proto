@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Enter your details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Enter your details
+                        </h1>
+                    </legend>
+
+                    <p>This is to help us confirm who you are, so we know what questions to ask you.</p>
+                    <label class="govuk-label govuk-!-font-weight-bold" for="width-20">
+                        First name
+                    </label>
+                    <input class="govuk-input govuk-input--width-20" id="first_name" name="first_name" type="text">
+                    <br><br>
+                    <label class="govuk-label govuk-!-font-weight-bold" for="width-20">
+                        Last name
+                    </label>
+                    <input class="govuk-input govuk-input--width-20" id="last_name" name="last_name" type="text">
+                    <br><br>
+                    <label class="govuk-label govuk-!-font-weight-bold" for="width-20">
+                        National insurance number
+                    </label>
+                    <div id="account-number-hint" class="govuk-hint">
+                        It's on your National Insurance card, benefit letter, payslip or P60. <br>
+                        For example, AA123456C
+                    </div>
+                    <input class="govuk-input govuk-input--width-20" id="nino" name="nino" type="text">
+                    <br><br>
+                    <label class="govuk-label govuk-!-font-weight-bold" for="width-20">
+                        Date of birth
+                    </label>
+                    <div id="dob-hint" class="govuk-hint">
+                        For example, 27 3 2007
+                    </div>
+                    <div class="govuk-date-input" id="dob">
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-day">
+                                    Day
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day"
+                                    name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-month">
+                                    Month
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month"
+                                    name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                            </div>
+                        </div>
+                        <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-date-input__label" for="dob-year">
+                                    Year
+                                </label>
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year"
+                                    name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

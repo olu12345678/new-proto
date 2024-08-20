@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+You must sign up for Making Tax Digital for VAT
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            You must sign up for Making Tax Digital for VAT
+                        </h1>
+                    </legend>
+
+                    <p>
+                        Most VAT registered businesses with a taxable turnover above £85,000 must use compatible
+                        software to keep VAT records and send VAT returns.
+                    </p>
+                    <div class="govuk-inset-text">
+                        As your taxable turnover is above, or will go above, £85,000 in a rolling 12 month period, you
+                        will sign up for Making Tax Digital for VAT as part of the registration process.
+                    </div>
+
+                    <p>
+                        <a href="https://www.gov.uk/guidance/making-tax-digital-for-vat" target="_blank">find out more about Making Tax
+                            Digital for VAT (opens in a new tab)</a>
+                    </p>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue to register for VAT
+                    </button>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

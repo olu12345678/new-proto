@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+                <form method="post">
+                    <div class="govuk-form-group">
+
+                        <h1 class="govuk-heading-xl">Check your answers</h1>
+
+
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                            {% if data['partner_entity_type'] == "Sole trader" or data['partner_entity_type'] == "NETP" or data['partner_entity_type'] == "Scottish partnership" %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  {{data['partner_first_name']}} {{data['partner_last_name']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="partner-name">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Date of birth
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['dob-day']}} {{months[dob_month-1]}} {{data['dob-year']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="partner-date-of-birth">
+                                        Change<span class="govuk-visually-hidden"> date of birth</span>
+                                    </a>
+                                </dd>
+                            </div>
+
+
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    National Insurance Number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['national-insurance-number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="partner-national-insurance-number">
+                                        Change<span class="govuk-visually-hidden"> national insurance number</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% endif %}
+
+                            {% if data['partner_entity_type'] == "UK company" or data['partner_entity_type'] == "Scottish limited partnership" or data['partner_entity_type'] == "Limited liability partnership" %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Company Number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['company_number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="partner-crn">
+                                        Change<span class="govuk-visually-hidden">company number</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% endif %}
+
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Unique Taxpayers Reference
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['SA_UTR']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="partner-SA-UTR">
+                                        Change<span class="govuk-visually-hidden"> unique taxpayers reference</span>
+                                    </a>
+                                </dd>
+                            </div>
+
+
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    3 Romford Road <br>
+                                    Wellington <br>
+                                    Telford <br>
+                                    TF14ER</br>
+                                    United Kingdom
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="partner-address-lookup">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+
+                            <!-- <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Postcode
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['SA_postcode']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="SA-UTR">
+                                        Change<span class="govuk-visually-hidden"> unique taxpayers reference
+                                            number</span>
+                                    </a>
+                                </dd>
+                            </div> -->
+
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Telephone number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['telephone_number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="partner-telephone-number">
+                                        Change<span class="govuk-visually-hidden"> unique taxpayers reference
+                                            number</span>
+                                    </a>
+                                </dd>
+                            </div>
+
+                            <!-- <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Mobile number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['mobile_number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="partner-mobile-number">
+                                        Change<span class="govuk-visually-hidden"> unique taxpayers reference
+                                            number</span>
+                                    </a>
+                                </dd>
+                            </div> -->
+
+
+
+                        </dl>
+                        <button class="govuk-button" data-module="govuk-button">
+                            Confirm and continue
+                        </button>
+                        <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                            back later</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}

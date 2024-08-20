@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ What will be the last month of your accounting year?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <span class="govuk-caption-xl">VAT registration</span>
+                        <h1 class="govuk-fieldset__heading">
+                            What will be the last month of your accounting year?
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-radios govuk-radios">
+                        <div class="govuk-radios__item" data-target="date-fields">
+                            <input class="govuk-radios__input" id="threshold-yes" name="period_end" type="radio"
+                                value="January">
+                            <label class="govuk-label govuk-radios__label" for="threshold-yes">
+                                January
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="period_end" type="radio"
+                                value="February">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                February
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="period_end" type="radio"
+                                value="March">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                March
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="period_end" type="radio"
+                                value="April">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                April
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="period_end" type="radio"
+                                value="May">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                May
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="period_end" type="radio"
+                                value="June">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                June
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="period_end" type="radio"
+                                value="July">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                July
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="period_end" type="radio"
+                                value="August">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                August
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="period_end" type="radio"
+                                value="September">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                September
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="period_end" type="radio"
+                                value="October">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                October
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="period_end" type="radio"
+                                value="November">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                November
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="period_end" type="radio"
+                                value="December">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                December
+                            </label>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                        Save and continue
+                    </button>
+                    <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save
+                        and come
+                        back later</a>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

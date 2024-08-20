@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+VAT registration prototype versions
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-panel govuk-panel--confirmation">
+                    <h1 class="govuk-panel__title">
+                        Your application has been saved
+                    </h1>
+                    <div class="govuk-panel__body">
+                        Your information will be held until <br>[ Insert date here ]
+                    </div>
+                </div>
+
+                <p>
+                    You will need to sign back in to continue your application. You will not be able to submit your
+                    application until you have completed all of the sections.
+                </p>
+
+                <p>
+                    You can leave this page, or <a href='#' onclick="goBack()">go back to the main service</a>
+                </p>
+
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}

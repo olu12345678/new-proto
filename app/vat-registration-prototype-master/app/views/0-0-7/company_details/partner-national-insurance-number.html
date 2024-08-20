@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What is your National Insurance number?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">Partner details</span>
+                            <h1 class="govuk-fieldset__heading">
+                                What is {{data['first_name']}}'s National Insurance number?
+                            </h1>
+                        </legend>
+
+                        <p>
+                            It’s on the National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34
+                            56 C’.
+                        </p>
+
+                        <div class="govuk-form-group">
+                            <input class="govuk-input govuk-input--width-20" id="NINO" name="NINO" type="text" autocomplete="off">
+                        </div>
+
+                    </fieldset>
+
+                </div>
+
+            </div>
+            <p>
+                <a href="errors/cannot-continue"> {{data['first_name']}} does not have a national insurance number</a>
+            </p>
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

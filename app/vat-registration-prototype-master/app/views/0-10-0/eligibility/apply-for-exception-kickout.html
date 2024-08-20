@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+You can ask for an exception if you have only temporarily gone over the VAT threshold
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            You can ask for an exception if you have only temporarily gone over the VAT threshold
+                        </h1>
+                    </legend>
+                    <p>
+                        An exception means you will not have to register for VAT if you can provide evidence that your
+                        VAT taxable turnover will not go over the deregistration threshold of £83,000 in the next 12
+                        months. To ask for an exception, you will need to write to HMRC.
+                    </p>
+
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item" data-target="date-fields">
+                            <input class="govuk-radios__input" id="threshold-yes" name="exception_2" type="radio"
+                                value="I want to ask for an exception">
+                            <label class="govuk-label govuk-radios__label" for="threshold-yes">
+                                I want to ask for an exception
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="exception_2" type="radio"
+                                value="I do not want to ask for an exception">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                I do not want to ask for an exception
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

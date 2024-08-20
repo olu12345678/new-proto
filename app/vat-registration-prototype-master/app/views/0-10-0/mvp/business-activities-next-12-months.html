@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Will the business do any of the following activities over the next 12 months?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Will the business do any of the following activities over the next 12 months?
+                        </h1>
+                    </legend>
+
+                    <p>Tell us if the business will:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>sell assets bought from outside the UK and claimed a VAT refund on</li>
+                        <li>do all its business outside the UK</li>
+                        <li>have its head office outside the UK</li>
+                        <li>bring goods into Northern Ireland from an EU member state</li>
+                        <li>sell goods located in Northern Ireland at the time of sale</li>
+                        <li>sell or move goods from Northern Ireland to an EU member state</li>
+                    </ul>
+
+
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="international-activities"
+                                name="international-activities" type="radio" value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="international-activities">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="international-activities-2"
+                                name="international-activities" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="international-activities-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Does the business want to register for the Flat Rate Scheme?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                Does the business want to register for the Flat Rate Scheme?
+                            </h1>
+                        </legend>
+                        <p>
+                            Companies on the Flat Rate Scheme:
+                        </p>
+                        <p>
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li>pay a fixed rate of VAT to HMRC, based on their business type</li>
+                                <li>keep the difference between what they charge customers and pay to HMRC</li>
+                                <li>cannot reclaim VAT on their purchases (except for certain capital assets over £2,000)
+                                </li>
+                                <li>usually have simpler VAT records than businesses on the standard rate scheme</li>
+                            </ul>
+                        </p>
+                        <p>They can also take an extra 1% off their fixed rate in the first year of VAT registration.
+                        </p>
+                        <details class="govuk-details" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Show me an example
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <p>A dry cleaners on the Flat rate Scheme does £20,000 worth of work in a quarter. It
+                                    charges 20% VAT and its sales, including £4,000 for VAT, total £24,000.</p>
+                                <p>This type of business pays a VAT flat rate of 12% of total sales, which is £2,880.
+                                    This is less than the £4,000 it charged for VAT and it can keep the £1,120
+                                    difference.</p>
+                            </div>
+                        </details>
+
+                        <h2 class="govuk-heading-l">Before you decide</h2>
+                        <p>
+                            You will need to have an idea how much the business will:
+                        </p>
+                        <p>
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li>spend on goods to run the company over the next 3 months</li>
+                                <li>earn in sales, including VAT, over the next 3 months</li>
+                            </ul>
+                        </p>
+                        <p>
+                            If you cannot decide right now, answer ‘no’. The business can register for the Flat Rate
+                            Scheme at a later date.
+                        </p>
+                        <p>Find out more about <a href="https://www.gov.uk/vat-flat-rate-scheme" target="_blank">VAT
+                                Flat Rate Scheme (opens in a new tab)</a>.</p>
+                        <div class="govuk-radios govuk-radios--inline">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="flat-rate" name="flat_rate" type="radio"
+                                    value="Yes">
+                                <label class="govuk-label govuk-radios__label" for="flat-rate">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="flat-rate-2" name="flat_rate" type="radio"
+                                    value="No">
+                                <label class="govuk-label govuk-radios__label" for="flat-rate-2">
+                                    No
+                                </label>
+                            </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

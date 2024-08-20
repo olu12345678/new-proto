@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+In any 12-month period has the business gone over the VAT-registration threshold?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            In the next 30 days alone, does the business expect to make more than £85,000 in VAT-taxable
+                            sales?
+                        </h1>
+                    </legend>
+                    <p>
+                        For example, the business is expecting orders - or has signed a contract - that will generate
+                        VAT-taxable sales of £85,000 or more in the next 30 days.
+                    </p>
+
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item" data-target="date-fields">
+                            <input class="govuk-radios__input" id="threshold-yes" name="threshold" type="radio"
+                                value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="threshold-yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="threshold" type="radio"
+                                value="No">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

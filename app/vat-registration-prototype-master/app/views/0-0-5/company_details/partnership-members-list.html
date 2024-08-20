@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+How many partners are involved?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post" autocomplete="off">
+            <div class="govuk-form-group">
+                <span class="govuk-caption-xl">Company details</span>
+
+                <h1 class="govuk-heading-xl">You have added 1 member of the partnership</h1>
+                <div class="govuk-form-group">
+                    <ul class="hmrc-add-to-a-list hmrc-add-to-a-list--short">
+
+                        <li class="hmrc-add-to-a-list__contents">
+                            <span class="hmrc-add-to-a-list__identifier hmrc-add-to-a-list__identifier--light">
+                                Partner Name
+                            </span>
+                            <span class="hmrc-add-to-a-list__change">
+                                <a class="govuk-link" href="change-business-involvement.html">
+                                    <span aria-hidden="true">Change</span>
+                                    <span class="govuk-visually-hidden">Change Swales Limited</span>
+                                </a>
+                            </span>
+                            <span class="hmrc-add-to-a-list__remove">
+                                <a class="govuk-link" href="remove-business-involvement.html">
+                                    <span aria-hidden="true">Remove</span>
+                                    <span class="govuk-visually-hidden">Remove Swales Limited from the list</span>
+                                </a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">
+                            Do you need to add another partner?
+                        </legend>
+                        <span id="add-another-hint" class="govuk-hint">
+                            You need a minimum of 2 partners.
+                          </span>
+                        <div class="govuk-radios govuk-radios--inline">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="add-another" name="add-another" type="radio"
+                                    value="Yes">
+                                <label class="govuk-label govuk-radios__label" for="add-another">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio"
+                                    value="No">
+                                <label class="govuk-label govuk-radios__label" for="add-another-2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <br>
+                <button class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </button>
+                <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save
+                    and come
+                    back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

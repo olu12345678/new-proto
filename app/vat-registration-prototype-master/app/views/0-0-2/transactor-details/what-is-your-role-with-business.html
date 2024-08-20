@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Enter your details
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">Individual section</span>
+                            <h1 class="govuk-fieldset__heading">
+                                What is your role with the business?
+                            </h1>
+                        </legend>
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live"
+                                    type="radio" value="england">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                                    Owner/Proprietor of the business
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live"
+                                    type="radio" value="scotland">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                    Partner
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live"
+                                    type="radio" value="wales">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                    Director
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live"
+                                    type="radio" value="northern-ireland">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                                    Company secretary
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live"
+                                    type="radio" value="northern-ireland">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                                    Board member
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live"
+                                    type="radio" value="northern-ireland">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                                    Trustee
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live"
+                                    type="radio" value="northern-ireland">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                                   Financial controller
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live"
+                                    type="radio" value="northern-ireland">
+                                <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                                   Other
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

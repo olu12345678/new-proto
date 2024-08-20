@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+How to register divisions or business units for VAT
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            How to register divisions or business units for VAT
+                        </h1>
+                    </legend>
+
+                    <p>
+                        To register divisions or business units of your company for VAT you need to:
+                    </p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li><a
+                                href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/606422/VAT1_04_17.pdf">complete
+                                a VAT 1 form </a>for each division or business unit</li>
+                        <li>explain in detail, in a letter, why it’s difficult for you to submit a single VAT Return for
+                            the company</li>
+                        <li>provide evidence that your company is incorporated, for example incorporation certificates
+                        </li>
+                    </ul>
+
+                    <p><a
+                            href="https://www.gov.uk/guidance/vat-registration-for-groups-divisions-and-joint-ventures#divisions-or-business-units">Learn
+                            more about registering groups and divisions</a>.</p>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

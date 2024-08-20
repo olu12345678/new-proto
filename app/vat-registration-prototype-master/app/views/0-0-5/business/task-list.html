@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Register for VAT
+    </h1>
+
+    <ol class="app-task-list">
+      {% if data['on-behalf'] == "No" %}
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1.</span> Agent section
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="../transactor-details/do-you-have-a-organisation-name.html" aria-describedby="company-information-completed">
+                Personal information
+              </a>
+            </span>
+            {% if data['transactor_personal_completed'] == "Yes" %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="../transactor-details/postcode-lookup" aria-describedby="company-information-completed">
+                Addresses
+              </a>
+            </span>
+            {% if data['transactor_addresses_completed'] == "Yes" %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="../transactor-details/telephone-number" aria-describedby="company-information-completed">
+                Contact details
+              </a>
+            </span>
+            {% if data['transactor_contact_completed'] == "Yes" %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">{% if data['on-behalf'] == "Yes" %} 1.{% else %}
+            2.{% endif %}</span> Organisation details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="business-entity" aria-describedby="company-information-completed">
+                Business information
+              </a>
+            </span>
+            {% if data['known-facts-completed'] == "Yes" %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">{% if data['on-behalf'] == "Yes" %} 2.{% else %}
+            3.{% endif %}</span> Applicant details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="../applicant_details/whats-the-role-in-business"
+                aria-describedby="company-information-completed">
+                Personal information
+              </a>  
+            </span>
+            {% if data['applicant_personal_detail_completed'] == "Yes" %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="../applicant_details/post-code-lookup" aria-describedby="company-information-completed">
+                Addresses
+              </a>
+            </span>
+            {% if data['applicant_addresses_completed'] == "Yes" %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="../applicant_details/email-address" aria-describedby="company-information-completed">
+                Contact details
+              </a>
+            </span>
+            {% if data['applicant_contact_completed'] == "Yes" %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+  </div>
+</div>
+
+{% endblock %}

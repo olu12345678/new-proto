@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Is the business registering for the VAT Mini One Stop Shop Scheme?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Is the business registering for the VAT Mini One Stop Shop Scheme?
+                        </h1>
+                    </legend>
+
+                    <p>
+                        The VAT Mini One Stop Shop (VAT MOSS) scheme is a way of paying VAT on supplies of certain digital services.
+                    </p>
+
+                    <p>Find out more about <a target="_blank"
+                            href="https://www.gov.uk/guidance/register-and-use-the-vat-mini-one-stop-shop">the Mini One Stop
+                            Shop Scheme guidance page (opens in a new tab)</a></p>
+
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="moss" name="moss" type="radio" value="yes">
+                            <label class="govuk-label govuk-radios__label" for="moss">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="moss-2" name="moss" type="radio" value="no">
+                            <label class="govuk-label govuk-radios__label" for="moss-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

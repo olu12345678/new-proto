@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Uploading the document
+{% endblock %}
+{% block beforeContent %}
+<style>
+    /* Dynamic spinner for please-wait page within file upload journey */
+    .ccms-loader {
+        border: 12px solid #DEE0E2;
+        border-radius: 50%;
+        border-top-color: #005EA5;
+        width: 40px;
+        height: 40px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--l" for="file-upload-1">
+                    Uploading the document
+                </label>
+            </h1>
+
+            <div id="processing" aria-live="polite" class="govuk-!-margin-bottom-5">
+                <h2 class="govuk-heading-m">We are checking your file, please wait</h2>
+                <div>
+                    <div class="ccms-loader"></div>
+                </div>
+            </div>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" disabled="">
+        </div>
+        <a href="summary" role="button" draggable="false" class="govuk-button govuk-button--disabled"
+            data-module="govuk-button">
+            Save and continue
+        </a>
+        <a href="" role="button" draggable="false" class="govuk-button govuk-button--secondary govuk-button--disabled"
+            data-module="govuk-button">
+            Save and come
+            back later
+        </a>
+    </div>
+
+    <script>
+        setTimeout(function () {
+            window.location.href = '/0-10-0/attachments/add-to-list-1';
+        }, 5000);
+    </script>
+    {% endblock %}

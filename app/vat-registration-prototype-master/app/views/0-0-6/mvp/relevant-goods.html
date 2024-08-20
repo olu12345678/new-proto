@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Will the business spend more than £250 over the next 3 months on ‘relevant goods’?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                Will the business spend more than £250 over the next 3 months on ‘relevant goods’?
+                            </h1>
+                        </legend>
+                        <p>
+                            ‘Relevant goods’ are moveable items or materials used exclusively to run the company. They
+                            include gas and electricity.
+                        </p>
+
+                        <h2 class="govuk-heading-l">What you cannot include</h2>
+                        <p>
+                            Do not include:
+                        </p>
+                        <p>
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li>travel and accommodation expenses</li>
+                                <li>food and drink consumed by directors or staff</li>
+                                <li>vehicle costs including fuel, unless the company is in the transport business and
+                                    staff are using their own or a leased vehicle</li>
+                                <li>rent, internet, phone bill</li>
+                                <li>accountancy fees</li>
+                                <li>gifts, promotional items and donations</li>
+                                <li>goods the company will resell or hire out unless this is its main business activity
+                                </li>
+                                <li>training and memberships</li>
+                                <li>capital items, for example office equipment, laptops, mobile phones and tablets</li>
+                                <li>services - that is, anything not classified as 'goods'</li>
+                            </ul>
+                        </p>
+                        <p>
+                            If you cannot decide right now, answer ‘no’. The business can register for the Flat Rate
+                            Scheme at a later date.
+                        </p>
+                        <p>Find out more about <a href="https://www.gov.uk/vat-flat-rate-scheme" target="_blank">VAT
+                                Flat Rate Scheme (opens in a new window)</a>.</p>
+                        <div class="govuk-radios govuk-radios--inline">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="flat-rate" name="relevant-goods" type="radio"
+                                    value="Yes">
+                                <label class="govuk-label govuk-radios__label" for="relevant-goods">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="flat-rate-2" name="relevant-goods" type="radio"
+                                    value="No">
+                                <label class="govuk-label govuk-radios__label" for="flat-rate-2">
+                                    No
+                                </label>
+                            </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

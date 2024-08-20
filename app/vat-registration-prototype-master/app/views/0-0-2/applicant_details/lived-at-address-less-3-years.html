@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Has [name] lived at this address less than 3 years?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">Applicant details</span>
+                            <h1 class="govuk-fieldset__heading">
+                                Has {{data['first_name']}} lived at this address less than 3 years?
+                            </h1>
+                        </legend>
+                        <p>
+                            3 Romford road <br>
+                            Wellington <br>
+                            Telford <br>
+                            TF14ER <br>
+                            United Kingdom
+                        </p>
+                        <div class="govuk-radios govuk-radios--inline">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changed-name" name="address_3_years" type="radio"
+                                    value="yes">
+                                <label class="govuk-label govuk-radios__label" for="changed-name">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changed-name-2" name="address_3_years" type="radio"
+                                    value="no">
+                                <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                    No
+                                </label>
+                            </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if data['first_name'] %}
+What is {{data['first_name']}}'s email address?
+{% else %}
+What is Joe's email address?
+{% endif %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post" autocomplete="off">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            {% if data['first_name'] %}
+                            What is {{data['first_name']}}'s email address?
+                            {% else %}
+                            What is Joe's email address?
+                            {% endif %}
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-form-group">
+                        <input class="govuk-input govuk-input--width-20" id="email-address" name="email-address"
+                            type="email">
+                    </div>
+            </div>
+            <p>Full details of how we use your information are in the <a
+                    href="https://www.gov.uk/government/publications/data-protection-act-dpa-information-hm-revenue-and-customs-hold-about-you/data-protection-act-dpa-information-hm-revenue-and-customs-hold-about-you">HMRC
+                    Privacy Notice (opens in a new tab)</a>.</p>
+            </fieldset>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

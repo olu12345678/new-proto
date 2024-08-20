@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+VAT registration prototype versions
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Confirm the company you want to register for VAT
+        </h1>
+
+        <div class="form-group">
+            <p><span class="govuk-!-font-weight-bold">Company number</span><br></p>
+            <p><span class="govuk-!-font-weight-bold">Company name</span><br>SWALES LTD</p>
+            <p><span class="govuk-!-font-weight-bold">Registered office address</span>
+                <br>1 Ironmasters Way
+
+                <br>Telford
+                <br>Shropshire
+                <br>TF1 1AB
+            </p>
+
+            <p>If this is not the right company, <a href="company-registration-number">try a different company
+                    number</a></p>
+        </div>
+        <form method="POST">
+            <button class="govuk-button" data-module="govuk-button">
+                Confirm and continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

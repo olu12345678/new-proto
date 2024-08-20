@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Have you been involved with another business or taken over a VAT-registered business?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Have you been involved in another business or taken over a VAT-registered business?
+                        </h1>
+                    </legend>
+                    <p>
+                        Tell us if any of the following apply:
+
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>
+                                over the past 2 years, you have had another self-employed business in the UK or Isle of
+                                Man (do not tell us if your only source of self-employed income was from being a
+                                landlord)
+                            </li>
+                            <li>
+                                over the past 2 years, you have been a partner or director with a different business in
+                                the UK or Isle of Man
+                            </li>
+                            <li>
+                                you want to <a
+                                    href="https://www.gov.uk/guidance/vat-registration-for-groups-divisions-and-joint-ventures">set
+                                up a VAT group (opens in a new window)</a>
+                            </li>
+                            <li>
+                                the company used to be a different type of VAT-registered business, for example a sole
+                                trader
+                            </li>
+                            <li>
+                                the company has taken over another VAT-registered company that was making a profit
+                            </li>
+                        </ul>
+
+                    </p>
+
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item" data-target="date-fields">
+                            <input class="govuk-radios__input" id="threshold-yes" name="business" type="radio"
+                                value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="threshold-yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="business" type="radio"
+                                value="No">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

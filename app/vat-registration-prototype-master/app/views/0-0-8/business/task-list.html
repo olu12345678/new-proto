@@ -1,0 +1,567 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{serviceName}}
+    </h1>
+    {% if (data['frs_completed'] == "Yes") and (data['frs_started'] == "No") %}
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application complete</h2>
+    {% else %}
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+    {% endif %}
+    <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 9 sections.</p>
+
+    <ol class="app-task-list">
+      {% if data['on-behalf'] == "No, I want to register someone else's business" %}
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1.</span> Agent section
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="../transactor-details/do-you-have-a-organisation-name.html"
+                aria-describedby="company-information-completed">
+                Personal information
+              </a>
+            </span>
+            {% if data['agent_personal_information_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['transactor_personal_completed'] == "Yes") and (data['agent_personal_information_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['transactor_personal_completed'] == "Yes") and (data['agent_personal_information_started'] == "No") %}
+              <a href="../transactor-details/postcode-lookup" aria-describedby="company-information-completed">
+                Addresses
+              </a>
+              {% else %}
+              Addresses
+              {% endif %}
+            </span>
+            {% if data['agent_addresses_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['transactor_addresses_completed'] == "Yes") and (data['agent_addresses_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['transactor_addresses_completed'] == "Yes") and (data['agent_addresses_started'] == "No") %}
+              <a href="../transactor-details/telephone-number" aria-describedby="company-information-completed">
+                Contact details
+              </a>
+              {% else %}
+              Contact details
+              {% endif %}
+            </span>
+            {% if data['agent_contact_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['transactor_contact_completed'] == "Yes") and (data['agent_contact_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1.</span> Organisation details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if data['on-behalf'] == "Yes" %}
+              <a href="business-entity" aria-describedby="company-information-completed">
+                Business information
+              </a>
+              {% elseif (data['transactor_contact_completed'] == "Yes") and (data['agent_contact_started'] == "No") %}
+              <a href="business-entity" aria-describedby="company-information-completed">
+                Business information
+              </a>
+              {% else %}
+              Business information
+              {% endif %}
+            </span>
+            {% if data['org_section_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['org_section_completed'] == "Yes") and (data['org_section_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">2.</span> Applicant details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['org_section_completed'] == "Yes") and (data['org_section_started'] == "No") %}
+              <a href="../applicant_details/whats-the-role-in-business"
+                aria-describedby="company-information-completed">
+                Personal information
+              </a>
+              {% else %}
+              Personal information
+              {% endif %}
+            </span>
+            {% if data['applicant_personal_details_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['applicant_personal_details_completed'] == "Yes") and (data['applicant_personal_details_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['org_section_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['applicant_personal_details_completed'] == "Yes") and (data['applicant_personal_details_started'] == "No") %}
+              <a href="../applicant_details/post-code-lookup" aria-describedby="company-information-completed">
+                Addresses
+              </a>
+              {% else %}
+              Addresses
+              {% endif %}
+            </span>
+            {% if data['applicant_addresses_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['applicant_addresses_completed'] == "Yes") and (data['applicant_addresses_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['applicant_personal_details_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['applicant_addresses_completed'] == "Yes") and (data['applicant_addresses_started'] == "No") %}
+              <a href="../applicant_details/email-address" aria-describedby="company-information-completed">
+                Contact details
+              </a>
+              {% else %}
+              Contact details
+              {% endif %}
+            </span>
+            {% if data['applicant_contact_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['applicant_contact_completed'] == "Yes") and (data['applicant_contact_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['applicant_addresses_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      {% if data['type_of_business'] == "Partnership" %}
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">{% if data['on-behalf'] == "Yes" %} 3.{% else %}
+            4.{% endif %}</span> Partners details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['applicant_contact_completed'] == "Yes") and (data['applicant_contact_started'] == "No") %}
+              <a href="../company_details/partner-entity" aria-describedby="company-information-completed">
+                Partners information
+              </a>
+              {% else %}
+              Partners information
+              {% endif %}
+            </span>
+            {% if data['partners_details_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['partners_details_completed'] == "Yes") and (data['partners_details_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['applicant_contact_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      {% endif %}
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">3.</span> Business details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['partners_details_completed'] == "Yes") and (data['partners_details_started'] == "No") and (data['type_of_business'] == "Partnership") %})
+              %}
+              <a href="../company_details/trading-name" aria-describedby="company-information-completed">
+                Addresses
+              </a>
+              {% elseif (data['applicant_contact_completed'] == "Yes") and (data['applicant_contact_started'] == "No") and (data['type_of_business'] !== "Partnership") %}
+              <a href="../company_details/trading-name" aria-describedby="company-information-completed">
+                Addresses
+              </a>
+              {% else %}
+              Addresses
+              {% endif %}
+            </span>
+            {% if data['business_address_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['business_address_completed'] == "Yes") and (data['business_address_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['partners_details_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['business_address_completed'] == "Yes") and (data['business_address_started'] == "No") %}
+              <a href="../company_details/business-mobile-number" aria-describedby="company-information-completed">
+                Contact details
+              </a>
+              {% else %}
+              Contact details
+              {% endif %}
+            </span>
+            {% if data['business_contact_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['business_contact_completed'] == "Yes") and (data['business_contact_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['business_address_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">4.</span> Business activities
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['business_contact_completed'] == "Yes") and (data['business_contact_started'] == "No") %}
+              <a href="../company_details/business-activities" aria-describedby="company-information-completed">
+                Business activities
+              </a>
+              {% else %}
+              Business activities
+              {% endif %}
+            </span>
+            {% if data['activities_sic_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['activities_sic_completed'] == "Yes") and (data['activities_sic_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['business_contact_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['activities_sic_completed'] == "Yes") and (data['activities_sic_started'] == "No") %}
+              <a href="../company_details/other-business-involvements" aria-describedby="company-information-completed">
+                Other business involvements
+              </a>
+              {% else %}
+              Other business involvements
+              {% endif %}
+            </span>
+            {% if data['activities_other_businesses_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['activities_other_businesses_completed'] == "Yes") and (data['activities_other_businesses_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['activities_sic_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['activities_other_businesses_completed'] == "Yes") and (data['activities_other_businesses_started'] == "No") %}
+              <a href="../company_details/imports-or-exports" aria-describedby="company-information-completed">
+                Imports and exports
+              </a>
+              {% else %}
+              Imports and exports
+              {% endif %}
+            </span>
+            {% if data['imports_exports_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['imports_exports_completed'] == "Yes") and (data['imports_exports_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['activities_other_businesses_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">5.</span> Estimated value of supplies
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['imports_exports_completed'] == "Yes") and (data['imports_exports_started'] == "No") %}
+              <a href="../company_details/zero-rated-turnover" aria-describedby="company-information-completed">
+                Value of supplies
+              </a>
+              {% else %}
+              Value of supplies
+              {% endif %}
+            </span>
+            {% if data['value_of_supplies_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['value_of_supplies_completed'] == "Yes") and (data['value_of_supplies_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['imports_exports_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">6.</span> VAT registration details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['value_of_supplies_completed'] == "Yes") and (data['value_of_supplies_started'] == "No") %}
+              <a href="../company_details/vat-registration-date" aria-describedby="company-information-completed">
+                VAT registration date
+              </a>
+              {% else %}
+              VAT registration date
+              {% endif %}
+            </span>
+            {% if data['vat_reg_date_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['vat_reg_date_completed'] == "Yes") and (data['vat_reg_date_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['value_of_supplies_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['vat_reg_date_completed'] == "Yes") and (data['vat_reg_date_started'] == "No") %}
+              <a href="../company_details/vat-staggers" aria-describedby="company-information-completed">
+                VAT return frequency
+              </a>
+              {% else %}
+              VAT return frequency
+              {% endif %}
+            </span>
+            {% if data['vat_staggers_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['vat_staggers_completed'] == "Yes") and (data['vat_staggers_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['vat_reg_date_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">7.</span> Bank account details
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['vat_staggers_completed'] == "Yes") and (data['vat_staggers_started'] == "No") %}
+              <a href="../company_details/bank-set-up" aria-describedby="company-information-completed">
+                Account details
+              </a>
+              {% else %}
+              Account details
+              {% endif %}
+            </span>
+            {% if data['bank_details_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['bank_details_completed'] == "Yes") and (data['bank_details_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['vat_staggers_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">8.</span> VAT schemes
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['bank_details_completed'] == "Yes") and (data['bank_details_started'] == "No") %}
+              <a href="../company_details/join-flat-rate" aria-describedby="company-information-completed">
+                Flat rate scheme
+              </a>
+              {% else %}
+              Flat rate scheme{% endif %}
+            </span>
+            {% if data['frs_started'] == "Yes" %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+              progress</strong>
+            {% elseif (data['frs_completed'] == "Yes") and (data['frs_started'] == "No") %}
+            <strong class="govuk-tag app-task-list__task-completed"
+              id="company-information-completed">Completed</strong>
+            {% elseif (data['bank_details_completed'] !== "Yes") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">9.</span> Send application
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              {% if (data['frs_completed'] == "Yes") and (data['frs_started'] == "No") %}
+              <a href="../check-and-submit/final-check-your-answers" aria-describedby="company-information-completed">
+                Check your answers and submit
+              </a>
+              {% else %}
+              Check your answers and submit
+              {% endif %}
+            </span>
+            {% if (data['frs_completed'] == "Yes") and (data['frs_started'] == "No") %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+              started</strong>
+            {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+              yet</strong>
+            {% endif %}
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+  </div>
+</div>
+
+{% endblock %}

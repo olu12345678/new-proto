@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Are you registering a business that you own?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post" autocomplete="off">
+            <div class="govuk-form-group">
+                <span class="govuk-caption-xl">Individual section</span>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Are you registering a business that you own?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="on-behalf" name="on-behalf" type="radio"
+                                value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="on-behalf">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="on-behalf-2" name="on-behalf" type="radio"
+                                value="No">
+                            <label class="govuk-label govuk-radios__label" for="on-behalf-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

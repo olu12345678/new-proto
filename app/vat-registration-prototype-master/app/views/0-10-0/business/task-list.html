@@ -1,0 +1,715 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Task list
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            {{serviceName}}
+        </h1>
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
+        <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 7 sections.</p>
+
+        <ol class="app-task-list">
+
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">1. Check eligibility</span>
+                </h2>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="../honesty-declaration" aria-describedby="company-information-completed">
+                                Declaration
+                            </a>
+                        </span>
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+
+                    </li>
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            <a href="business-entity" aria-describedby="company-information-completed">
+                                Eligibility
+                            </a>
+                        </span>
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+
+                    </li>
+                </ul>
+            </li>
+
+
+            {% if (data['on_behalf'] == "Someone else's") %}
+
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">2. About you</span>
+                </h2>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <a href="../transactor-details/do-you-have-a-organisation-name"
+                            aria-describedby="company-information-completed">
+                            Personal information
+                        </a>
+
+                        {% if data['agent_personal_information_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['transactor_personal_completed'] == "Yes") and (data['agent_personal_information_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                    <li class="app-task-list__item">
+                        {% if (data['transactor_personal_completed'] == "Yes") and (data['agent_personal_information_started'] == "No") %}
+                        <a href="../transactor-details/postcode-lookup"
+                            aria-describedby="company-information-completed">
+                            Address
+                        </a>
+                        {% else %}
+                        Address
+                        {% endif %}
+                        {% if data['agent_addresses_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['transactor_addresses_completed'] == "Yes") and (data['agent_addresses_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['transactor_personal_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                    <li class="app-task-list__item">
+                        {% if (data['transactor_addresses_completed'] == "Yes") and (data['agent_addresses_started'] == "No") %}
+                        <a href="../transactor-details/telephone-number"
+                            aria-describedby="company-information-completed">
+                            Contact details
+                        </a>
+                        {% else %}
+                        Contact details
+                        {% endif %}
+                        {% if data['agent_contact_details_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['transactor_contact_details_completed'] == "Yes") and (data['agent_contact_details_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['transactor_addresses_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+
+            {% endif %}
+
+
+
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">
+                        {% if (data['on_behalf'] == "Someone else's") %}
+                        3. Verify the business
+                        {% else %}
+                        2. Verify the business
+                        {% endif %}
+                    </span>
+                </h2>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            {% if data['on_behalf'] == "Your own" %}
+                                {% if data['type_of_business'] == "UK company" %}
+                                <a href="what-is-the-companies-reg-number" aria-describedby="company-information-completed">
+                                    Business information
+                                </a>
+                                {% elseif data['type_of_business'] == "Sole trader" %}
+                                <a href="full-name" aria-describedby="company-information-completed">
+                                    Sole trader information
+                                </a>
+                                {% elseif data['type_of_business'] == "Charitable Incorporated Organisation (CIO)" %}
+                                <a href="what-is-the-companies-reg-number" aria-describedby="company-information-completed">
+                                    Business information
+                                </a>
+                                {% elseif data['type_of_business'] == "Trust (non-incorporated)" %}
+                                <a href="have-SA-UTR" aria-describedby="company-information-completed">
+                                    Business information
+                                </a>
+                                {% elseif data['type_of_business'] == "Registered Society" %}
+                                <a href="what-is-the-companies-reg-number" aria-describedby="company-information-completed">
+                                    Business information
+                                </a>
+                                {% elseif data['type_of_business'] == "Unincorporated Association" %}
+                                <a href="have-CT-UTR" aria-describedby="company-information-completed">
+                                    Business information
+                                </a>
+                                {% else %}
+                                <a href="SA-UTR" aria-describedby="company-information-completed">
+                                    Business facts
+                                </a>
+                                {% endif %}
+                            {% elseif (data['on_behalf'] == "Someone else's") and (data['transactor_contact_details_completed'] == "Yes") and (data['agent_contact_details_started'] == "No") %}
+                            {% if data['type_of_business'] == "UK company"  %}
+                            <a href="what-is-the-companies-reg-number" aria-describedby="company-information-completed">
+                                Business information
+                            </a>
+                            {% elseif data['type_of_business'] == "Sole trader" %}
+                            <a href="full-name" aria-describedby="company-information-completed">
+                                Sole trader information
+                            </a>
+                            {% elseif data['type_of_business'] == "Charitable Incorporated Organisation (CIO)" %}
+                            <a href="what-is-the-companies-reg-number" aria-describedby="company-information-completed">
+                                Business information
+                            </a>
+                            {% elseif data['type_of_business'] == "Trust (non-incorporated)" %}
+                            <a href="have-SA-UTR" aria-describedby="company-information-completed">
+                                Business information
+                            </a>
+                            {% elseif data['type_of_business'] == "Registered Society" %}
+                            <a href="what-is-the-companies-reg-number" aria-describedby="company-information-completed">
+                                Business information
+                            </a>
+                            {% elseif data['type_of_business'] == "Unincorporated Association" %}
+                            <a href="have-CT-UTR" aria-describedby="company-information-completed">
+                                Business information
+                            </a>
+                            {% elseif (data['type_of_business'] == "Partnership") and (data['type_of_partnership'] == "General partnership") or (data['type_of_partnership'] == "Scottish partnership") %}
+                            <a href="SA-UTR" aria-describedby="company-information-completed">
+                                Business facts
+                            </a>
+                            {% else %}
+                            <a href="what-is-the-companies-reg-number" aria-describedby="company-information-completed">
+                                Business information
+                            </a>
+                            {% endif %}
+                            {% else %}
+                            Business information
+
+                            {% endif %}
+                        </span>
+                        {% if data['org_section_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['org_section_completed'] == "Yes") and (data['org_section_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['on_behalf'] == "Someone else's") and (data['transactor_contact_details_completed'] !=="Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+
+            {% if (data['on_behalf'] == "Your own") %}
+
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">3. About you</span>
+                </h2>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        {% if (data['org_section_completed'] == "Yes") and (data['org_section_started'] == "No") %}
+                        {% if (data['type_of_business'] == "Partnership") %}
+                        <a href="../applicant_details/lead-partner-entity"
+                            aria-describedby="company-information-completed">
+                            Personal information
+                        </a>
+                        {% else %}
+                        <a href="../applicant_details/whats-the-role-in-business"
+                            aria-describedby="company-information-completed">
+                            Personal information
+                        </a>
+                        {% endif %}
+                        {% else %}
+                        Personal information
+                        {% endif %}
+                        {% if data['applicant_personal_details_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['applicant_personal_details_completed'] == "Yes") and (data['applicant_addresses_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['org_section_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                    <li class="app-task-list__item">
+                        {% if (data['applicant_personal_details_completed'] == "Yes") and (data['applicant_personal_details_started'] == "No") %}
+                        <a href="../applicant_details/post-code-lookup"
+                            aria-describedby="company-information-completed">
+                            Addresses
+                        </a>
+                        {% else %}
+                        Addresses
+                        {% endif %}
+                        {% if data['applicant_addresses_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['applicant_addresses_completed'] == "Yes") and (data['applicant_addresses_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['applicant_personal_details_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                    <li class="app-task-list__item">
+                        {% if (data['applicant_addresses_completed'] == "Yes") and (data['applicant_addresses_started'] == "No") %}
+                        <a href="../applicant_details/email-address" aria-describedby="company-information-completed">
+                            Contact details
+                        </a>
+                        {% else %}
+                        Contact details
+                        {% endif %}
+                        {% if data['applicant_contact_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['applicant_contact_completed'] == "Yes") and (data['applicant_contact_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['applicant_addresses_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+
+            {% endif %}
+
+
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">4. About the business</span>
+                </h2>
+                <ul class="app-task-list__items">
+                    {% if data['type_of_business'] == "Partnership" %}
+                    {% if data['on_behalf'] == "Someone else's" %}
+                    <li class="app-task-list__item">
+                        {% if (data['org_section_completed'] == "Yes") and (data['org_section_started'] == "No") %}
+                        <a href="../company_details/partner-entity" aria-describedby="company-information-completed">
+                            Partners within the partnership
+                        </a>
+                        {% else %}
+                        Partners within the partnership
+                        {% endif %}
+                        {% if data['partners_details_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['partners_details_completed'] == "Yes") and (data['partners_details_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['org_section_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                    {% else %}
+                    <li class="app-task-list__item">
+                        {% if (data['applicant_contact_completed'] == "Yes") and (data['applicant_contact_started'] == "No") %}
+                        <a href="../company_details/partner-entity" aria-describedby="company-information-completed">
+                            Partners within the partnership
+                        </a>
+                        {% else %}
+                        Partners within the partnership
+                        {% endif %}
+                        {% if data['partners_details_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['partners_details_completed'] == "Yes") and (data['partners_details_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['applicant_contact_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                    {% endif %}
+                    {% endif %}
+
+
+
+
+
+
+                    <li class="app-task-list__item">
+                        {% if data['on_behalf'] == "Your own" %}
+                        {% if data['type_of_business'] == "Partnership" %}
+                        {% if (data['partners_details_completed'] == "Yes") and (data['partners_details_started'] == "No") %}
+                        {% if (data['type_of_partnership'] == "Limited partnership") or (data['type_of_partnership'] == "Scottish limited partnership") or (data['type_of_partnership'] == "Limited liability partnership") %}
+                        <a href="../company_details/check-trading-name"
+                            aria-describedby="company-information-completed">
+                            Business details
+                        </a>
+                        {% else %}
+                        <a href="../company_details/trading-name" aria-describedby="company-information-completed">
+                            Business details
+                        </a>
+                        {% endif %}
+                        {% else %}
+                        Business details
+                        {% endif %}
+                        {% else %}
+                        {% if (data['applicant_contact_completed'] == "Yes") and (data['applicant_contact_started'] == "No") and (data['type_of_business'] !== "Sole trader") and (data['type_of_business'] !== "Unincorporated Association") and (data['type_of_business'] !== "Trust (non-incorporated)") %}
+                        <a href="../company_details/check-trading-name"
+                            aria-describedby="company-information-completed">
+                            Business details
+                        </a>
+                        {% elseif (data['applicant_contact_completed'] == "Yes") and (data['applicant_contact_started'] == "No")  %}
+                        <a href="../company_details/trading-name" aria-describedby="company-information-completed">
+                            Business details
+                        </a>
+                        {% else %}
+                        Business details
+                        {% endif %}
+                        {% endif %}
+                        {% else %}
+                        {% if data['type_of_business'] == "Partnership" %}
+                        {% if (data['partners_details_completed'] == "Yes") and (data['partners_details_started'] == "No") %}
+                        {% if (data['type_of_partnership'] == "Limited partnership") or (data['type_of_partnership'] == "Scottish limited partnership") or (data['type_of_partnership'] == "Limited liability partnership") %}
+                        <a href="../company_details/check-trading-name"
+                            aria-describedby="company-information-completed">
+                            Business details
+                        </a>
+                        {% else %}
+                        <a href="../company_details/trading-name" aria-describedby="company-information-completed">
+                            Business details
+                        </a>
+                        {% endif %}
+                        {% else %}
+                        Business details
+                        {% endif %}
+                        {% else %}
+                        {% if (data['org_section_completed'] == "Yes") and (data['org_section_started'] == "No") and (data['type_of_business'] !== "Sole trader") and (data['type_of_business'] !== "Unincorporated Association") and (data['type_of_business'] !== "Trust (non-incorporated)") %}
+                        <a href="../company_details/check-trading-name"
+                            aria-describedby="company-information-completed">
+                            Business details
+                        </a>
+                        {% elseif (data['org_section_completed'] == "Yes") and (data['org_section_started'] == "No")  %}
+                        <a href="../company_details/trading-name" aria-describedby="company-information-completed">
+                            Business details
+                        </a>
+                        {% else %}
+                        Business details
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+
+
+
+
+
+                        {% if data['type_of_business'] == "Partnership" %}
+                        {% if data['business_trading_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['business_contact_completed'] == "Yes") and (data['business_contact_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['partners_details_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                        {% else %}
+                        {% if data['business_trading_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['business_contact_completed'] == "Yes") and (data['business_contact_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['org_section_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                        {% endif %}
+                    </li>
+
+
+                    <li class="app-task-list__item">
+                        {% if (data['business_contact_completed'] == "Yes") and (data['business_contact_started'] == "No") %}
+                        <a href="../company_details/business-activities"
+                            aria-describedby="company-information-completed">
+                            Business activities
+                        </a>
+                        {% else %}
+                        Business activities
+                        {% endif %}
+                        {% if data['activities_sic_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['activities_sic_completed'] == "Yes") and (data['activities_sic_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['business_contact_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+
+
+                    <li class="app-task-list__item">
+                        {% if (data['imports_exports_completed'] == "Yes") and (data['imports_exports_started'] == "No") %}
+                        <a href="../company_details/zero-rated-turnover"
+                            aria-describedby="company-information-completed">
+                            Value of supplies
+                        </a>
+                        {% else %}
+                        Value of supplies
+                        {% endif %}
+                        {% if data['value_of_supplies_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['value_of_supplies_completed'] == "Yes") and (data['value_of_supplies_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['imports_exports_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+
+
+                    <li class="app-task-list__item">
+                        {% if (data['value_of_supplies_completed'] == "Yes") and (data['value_of_supplies_started'] == "No") %}
+                        <a href="../company_details/bank-set-up" aria-describedby="company-information-completed">
+                            Bank account
+                        </a>
+                        {% else %}
+                        Bank account
+                        {% endif %}
+                        {% if data['bank_details_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['bank_details_completed'] == "Yes") and (data['bank_details_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['value_of_supplies_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+
+
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">5. VAT registration</span>
+                </h2>
+                <ul class="app-task-list__items">
+
+                    <li class="app-task-list__item">
+                        {% if (data['bank_details_completed'] == "Yes") and (data['bank_details_started'] == "No") %}
+                        <a href="../company_details/join-flat-rate" aria-describedby="company-information-completed">
+                            Schemes
+                        </a>
+                        {% else %}
+                        Schemes
+                        {% endif %}
+                        {% if data['frs_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['frs_completed'] == "Yes") and (data['frs_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['bank_details_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                    
+                    <li class="app-task-list__item">
+                        {% if (data['frs_completed'] == "Yes") and (data['frs_started'] == "No") %}
+                            {% if (data['type_of_business'] == "Unincorporated Association") or (data['type_of_business'] == "Sole trader") or (data['type_of_business'] == "Trust (non-incorporated)") or (data['type_of_business'] == "General partnership") or (data['type_of_business'] == "Scottish partnership")%}
+                            <a href="../company_details/vat-registration-date-not-incorporated"
+                                aria-describedby="company-information-completed">
+                                Registration date
+                            </a>
+                            {% else %}
+                            <a href="../company_details/vat-registration-date"
+                                aria-describedby="company-information-completed">
+                                Registration date
+                            </a>
+                            {% endif %}
+                        {% else %}
+                        Registration date
+                        {% endif %}
+                        {% if data['vat_reg_date_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['vat_reg_date_completed'] == "Yes") and (data['vat_reg_date_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['frs_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                    <li class="app-task-list__item">
+                        {% if (data['vat_reg_date_completed'] == "Yes") and (data['vat_reg_date_started'] == "No") %}
+                        <a href="../company_details/vat-staggers" aria-describedby="company-information-completed">
+                            Return frequency
+                        </a>
+                        {% else %}
+                        Return frequency
+                        {% endif %}
+                        {% if data['vat_staggers_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['vat_staggers_completed'] == "Yes") and (data['vat_staggers_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['vat_reg_date_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+    
+                </ul>
+            </li>
+
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">
+
+                        6. </span> Upload additional information
+
+                </h2>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        <span class="app-task-list__task-name">
+                            {% if (data['vat_staggers_completed'] == "Yes") and (data['vat_staggers_started'] == "No") %}
+                            <a href="../attachments/we-need-additional-information.html"
+                                aria-describedby="company-information-completed">
+                                Identity documentation
+                            </a>
+                            {% else %}
+                            Identity documentation
+                            {% endif %}
+                        </span>
+                        {% if data['attachments_started'] == "Yes" %}
+                        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In
+                            progress</strong>
+                        {% elseif (data['attachments_completed'] == "Yes") and (data['attachments_started'] == "No") %}
+                        <strong class="govuk-tag app-task-list__task-completed"
+                            id="company-information-completed">Completed</strong>
+                        {% elseif (data['vat_staggers_completed'] !== "Yes") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+
+
+            <li>
+                <h2 class="app-task-list__section">
+                    <span class="app-task-list__section-number">7. Send application</span>
+                </h2>
+                <ul class="app-task-list__items">
+                    <li class="app-task-list__item">
+                        {% if (data['attachments_completed'] == "Yes") and (data['attachments_started'] == "No") %}
+                        <a href="../check-and-submit/final-check-your-answers"
+                            aria-describedby="company-information-completed">
+                            Check answers and submit
+                        </a>
+                        {% else %}
+                        Check answers and submit
+                        {% endif %}
+                        {% if (data['attachments_completed'] == "Yes") and (data['attachments_started'] == "No") %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not
+                            started</strong>
+                        {% else %}
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="submit-pay-status">Cannot start
+                            yet</strong>
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+
+
+
+
+        </ol>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Email address verified
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <span class="govuk-caption-xl">Individual section</span>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Email address confirmed
+                        </h1>
+                    </legend>
+                </fieldset>
+                <button class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </button>
+                <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and
+                    come
+                    back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Confirm [name's] previous home address
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <span class="govuk-caption-xl">Applicant details</span>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Confirm {{data['first_name']}}'s previous home address
+                        </h1>
+                    </legend>
+
+                    <p>
+                        3 Romford road <br>
+                        Wellington <br>
+                        Telford <br>
+                        TF14ER <br>
+                        United Kingdom
+                    </p>
+
+            </div>
+
+            <p>
+                <a href="#">Edit this address</a>
+            </p>
+            </fieldset>
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

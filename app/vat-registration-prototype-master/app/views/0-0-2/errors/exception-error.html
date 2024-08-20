@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+You need to write to HMRC
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            You need to write to HMRC
+                        </h1>
+                    </legend>
+                    <p>
+                        If the business is applying for a VAT registration exception, <a
+                            href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/vat-registration-applications-exceptions-and-changes">write
+                            to HMRC</a>.
+                    </p>
+
+                    <p>
+                        You’ll need to give evidence showing why you believe the SWALES LTD’s VAT-taxable turnover will
+                        not go over the registration threshold of £85,000 in the next 12 months.
+                    </p>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

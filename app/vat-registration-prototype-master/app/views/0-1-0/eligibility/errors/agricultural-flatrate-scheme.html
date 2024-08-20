@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Use this form to register your business for the Agricultural Flat Rate Scheme
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Use this form to register your business for the Agricultural Flat Rate Scheme
+                        </h1>
+                    </legend>
+                    <p>
+                        To apply to join the Agricultural Flat Rate Scheme, you must <a
+                            href="https://www.gov.uk/government/publications/vat-agricultural-flat-rate-scheme-application-for-certification-vat98">use
+                            the VAT98 form</a>.
+                    </p>
+                    <p>
+                        <a href="https://www.gov.uk/guidance/agricultural-flat-rate-scheme-notice-70046#contents">Learn
+                            more about the Agricultural Flat Rate Scheme</a>.
+                    </p>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

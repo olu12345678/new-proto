@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you have a UK National Insurance number?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Do you have a UK National Insurance number?
+                        </h1>
+                    </legend>
+                    <p>
+                        It’s on the National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34
+                        56 C’.
+                    </p>
+
+                    <details class="govuk-details" data-module="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Why do we need your National Insurance number?
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        We need to know if you have a National Insurance number so we can do an identity check.
+                      </div>
+                    </details>
+
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="have-nino" name="have-nino" type="radio" value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="have-nino">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="have-nino-2" name="have-nino" type="radio"
+                                value="No">
+                            <label class="govuk-label govuk-radios__label" for="have-nino-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

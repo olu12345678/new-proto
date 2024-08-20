@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+                <form method="post">
+                    <div class="govuk-form-group">
+
+                        <h1 class="govuk-heading-xl">Check your answers</h1>
+
+
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Register your own business for VAT
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['on-behalf']}} 
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="whos-the-application-for.html">
+                                        Change<span class="govuk-visually-hidden"> whos the application for</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% if data['on-behalf'] == "No" %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Do you have a organisation name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['have-organisation']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="do-you-have-a-organisation-name">
+                                        Change<span class="govuk-visually-hidden"> organisation name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                           
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Organisation name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['organisation-name']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="organisation-name.html">
+                                        Change<span class="govuk-visually-hidden"> organisation name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                   Role with the business
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['role_with_business']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="what-is-your-role-with-business.html">
+                                        Change<span class="govuk-visually-hidden"> first name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% endif %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Full name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['first_name']}} {{data['last_name']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="full-name.html">
+                                        Change<span class="govuk-visually-hidden"> first name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Date of birth
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['dob']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="full-name.html">
+                                        Change<span class="govuk-visually-hidden"> first name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    National insurance number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['national-insurance-number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="national-insurance-number.html">
+                                        Change<span class="govuk-visually-hidden"> national insurance number</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% if data['on-behalf'] == "No" %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Home address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    3 Romford Road <br>
+                                    Wellington <br>
+                                    Telford <br>
+                                    TF14ER</br>
+                                    United Kingdom
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="postcode-lookup.html">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Telephone number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['telephone-number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="telephone-number.html">
+                                        Change<span class="govuk-visually-hidden"> telephone number</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Email address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['email-address']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="email-address.html">
+                                        Change<span class="govuk-visually-hidden"> email address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% endif %}
+                        </dl>
+                        <button class="govuk-button" data-module="govuk-button">
+                            Confirm and continue
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}

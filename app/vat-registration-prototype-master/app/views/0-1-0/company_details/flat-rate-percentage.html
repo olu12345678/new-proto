@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+The businesses VAT flat rate is 11%
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">Company details</span>
+                            <h1 class="govuk-fieldset__heading">
+                                The businesses VAT flat rate is 11%
+                            </h1>
+                        </legend>
+                        <p>
+                            Companies in their first year of VAT registration can take 1% off their flat rate.
+                        </p>
+                        <h2 class="govuk-heading-l">Do you want the business to join the Flat Rate Scheme?</h2>
+                        <div class="govuk-radios govuk-radios--inline">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="confirm-flat-rate" name="confirm-flat-rate"
+                                    type="radio" value="Yes">
+                                <label class="govuk-label govuk-radios__label" for="confirm-flat-rate">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="confirm-flat-rate-2" name="confirm-flat-rate"
+                                    type="radio" value="No">
+                                <label class="govuk-label govuk-radios__label" for="confirm-flat-rate-2">
+                                    No
+                                </label>
+                            </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

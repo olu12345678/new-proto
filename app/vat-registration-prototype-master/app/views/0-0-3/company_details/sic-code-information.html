@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+You’re about to confirm your Standard Industry Classification (SIC) codes for VAT
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post" autocomplete="off">
+            <div class="govuk-form-group">
+                <span class="govuk-caption-xl">Company information</span>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            You’re about to confirm your Standard Industry Classification (SIC) codes for VAT
+                        </h1>
+                    </legend>
+                </fieldset>
+                <p>A SIC code describes a business activity.</p>
+                <p>We’ll guide you through the process of choosing the right ones.</p>
+
+                <div class="govuk-inset-text">
+                    <p>Make sure the VAT SIC codes you choose reflect all business activities. It makes it quicker and
+                        easier to process VAT Returns.</p>
+                </div>
+                <button class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </button>
+                <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and
+                    come back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

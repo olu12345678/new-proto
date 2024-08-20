@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+                <form method="post">
+                    <div class="govuk-form-group">
+
+                        <h1 class="govuk-heading-xl">Check your answers</h1>
+
+
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Company number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['company_number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="what-is-the-companies-reg-number">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Unique Taxpayers Reference
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {% if data['CT_UTR'] %}
+                                    {{data['CT_UTR']}}
+                                    {% else %}
+                                    The business does not have a UTR
+                                    {% endif %}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="CT-UTR">
+                                        Change<span class="govuk-visually-hidden"> unique taxpayers reference
+                                            number</span>
+                                    </a>
+                                </dd>
+                            </div>
+                        </dl>
+                        <button class="govuk-button" data-module="govuk-button">
+                            Confirm and continue
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What are the business's bank account details?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                What are the business's bank account details?
+                            </h1>
+                        </legend>
+                        <p>
+                            HMRC VAT will only use this account to send VAT repayments. We will not take money from it.
+                        </p>
+                        <div class="govuk-inset-text">
+                            You must tell us if your account details change.
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="name-on-the-account">
+                                Name on the account
+                            </label>
+                            <input class="govuk-input" id="name-on-the-account" name="name-on-the-account" type="text"
+                                spellcheck="false">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="sort-code">
+                                Sort code
+                            </label>
+                            <div id="sort-code-hint" class="govuk-hint">
+                                Must be 6 digits long
+                            </div>
+                            <input class="govuk-input govuk-input--width-5" id="sort-code" name="sort-code" type="text"
+                                spellcheck="false" aria-describedby="sort-code-hint" pattern="[0-9]*"
+                                inputmode="numeric">
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for="account-number">
+                                Account number
+                            </label>
+                            <div id="account-number-hint" class="govuk-hint">
+                                Must be between 6 and 8 digits long
+                            </div>
+                            <input class="govuk-input govuk-input--width-10" id="account-number" name="account-number"
+                                type="text" spellcheck="false" aria-describedby="account-number-hint" pattern="[0-9]*"
+                                inputmode="numeric">
+                        </div>
+
+                        <!-- <div class="govuk-form-group">
+                            <label class="govuk-label" for="roll-number">
+                                Building society roll number (if you have one)
+                            </label>
+                            <div id="roll-number-hint" class="govuk-hint">
+                                You can find it on your card, statement or passbook
+                            </div>
+                            <input class="govuk-input govuk-input--width-10" id="roll-number" name="roll-number"
+                                type="text" spellcheck="false" aria-describedby="roll-number-hint">
+                        </div> -->
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if data['on-behalf'] == "No, I want to register someone else's business" %}
+Does the business need an EORI number?
+{% else %}
+Do you need an EORI number?
+{% endif %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">Company details</span>
+                            <h1 class="govuk-fieldset__heading">
+
+                                {% if data['on-behalf'] == "No, I want to register someone else's business" %}
+                                Does the business need an EORI number?
+                                {% else %}
+                                Do you need an EORI number?
+                                {% endif %}
+                            </h1>
+                        </legend>
+                        <p>
+                            You need an Economic Operators Registration and Identification (EORI) number to move goods
+                            between the UK and non-EU countries.
+                        </p>
+                        <p>
+
+                            From 1 January 2021 you need an EORI number to move goods between Great Britain (England,
+                            Scotland and Wales) and the EU. You may also need one if you move goods to or from Northern
+                            Ireland.
+                        </p>
+                        <p>
+                            If you do not have an EORI number, you may have increased costs and delays. For example, if
+                            HM Revenue and Customs (HMRC) cannot clear your goods you may have to pay storage fees.
+
+                        </p>
+                        <p><a href="https://www.gov.uk/eori" target="_blank">Find out more about EORI (opens in new
+                                tab)</a></p>
+                        <div class="govuk-radios govuk-radios--inline">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="eori_number" name="eori_number"
+                                    type="radio" value="Yes">
+                                <label class="govuk-label govuk-radios__label" for="eori_number">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="eori_number-2" name="eori_number"
+                                    type="radio" value="No">
+                                <label class="govuk-label govuk-radios__label" for="eori_number-2">
+                                    No
+                                </label>
+                            </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

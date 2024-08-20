@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Choose the address
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post" autocomplete="off">
+            <div class="govuk-form-group">
+                <span class="govuk-caption-xl">Individual section</span>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Choose the address
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live"
+                                type="radio" value="england">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                                1 Romford Road, Wellington, Telford, TF1 4ER
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live"
+                                type="radio" value="scotland">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                2 Romford Road, Wellington, Telford, TF1 4ER
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live"
+                                type="radio" value="wales">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                3 Romford Road, Wellington, Telford, TF1 4ER
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live"
+                                type="radio" value="northern-ireland">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                                4 Romford Road, Wellington, Telford, TF1 4ER
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live-5" name="where-do-you-live"
+                                type="radio" value="northern-ireland">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-5">
+                                5 Romford Road, Wellington, Telford, TF1 4ER
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live-6" name="where-do-you-live"
+                                type="radio" value="northern-ireland">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-6">
+                                6 Romford Road, Wellington, Telford, TF1 4ER
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live-7" name="where-do-you-live"
+                                type="radio" value="northern-ireland">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-7">
+                                7 Romford Road, Wellington, Telford, TF1 4ER
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live-8" name="where-do-you-live"
+                                type="radio" value="northern-ireland">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-8">
+                                8 Romford Road, Wellington, Telford, TF1 4ER
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live-9" name="where-do-you-live"
+                                type="radio" value="northern-ireland">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-9">
+                                9 Romford Road, Wellington, Telford, TF1 4ER
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="where-do-you-live-10" name="where-do-you-live"
+                                type="radio" value="northern-ireland">
+                            <label class="govuk-label govuk-radios__label" for="where-do-you-live-10">
+                                10 Romford Road, Wellington, Telford, TF1 4ER
+                            </label>
+                        </div>
+                    </div>
+            </div>
+            </fieldset>
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

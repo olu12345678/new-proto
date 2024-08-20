@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Company contact details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post" autocomplete="off">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Company contact details
+                        </h1>
+                    </legend>
+                    <p>We may need to get in touch for more information about the company's VAT affairs. Enter contact
+                        details for someone from the company.</p>
+
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="business-email">
+                            You need to provide a contact email address.<br>
+                            Email address
+                        </label>
+                        <input class="govuk-input govuk-input--width-20" id="business-email" name="business-email"
+                            type="email">
+                    </div>
+
+                    <div class="govuk-inset-text">
+                        You need to provide at least one of the following contact numbers.
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="business-phone-number">
+                            Phone number
+                        </label>
+                        <input class="govuk-input govuk-input--width-20" id="business-phone-number"
+                            name="business-phone-number" type="tel">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="business-mobile-number">
+                            Mobile number
+                        </label>
+                        <input class="govuk-input govuk-input--width-20" id="business-mobile-number"
+                            name="business-mobile-number" type="tel">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="business-phone-number">
+                            Website address (optional)
+                        </label>
+                        <input class="govuk-input govuk-input--width-20" id="business-website" name="business-website">
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

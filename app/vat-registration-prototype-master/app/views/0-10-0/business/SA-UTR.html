@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if data['type_of_business'] == "Partnership" %}
+What is the business's Unique Taxpayer Reference?
+{% elseif data['type_of_business'] == "Sole trader" %}
+What is your Unique Taxpayer Reference?
+{% else %}
+What is your Unique Taxpayer Reference?
+{% endif %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form method="post">
+      <div class="govuk-form-group">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <span class="govuk-caption-xl">Verify the business</span>
+              <h1 class="govuk-fieldset__heading">
+                {% if data['type_of_business'] == "Partnership" %}
+                What is the business's Unique Taxpayer Reference?
+                {% elseif data['type_of_business'] == "Sole trader" %}
+                What is your Unique Taxpayer Reference?
+                {% else %}
+                What is your Unique Taxpayer Reference?
+                {% endif %}
+              </h1>
+            </legend>
+            <p>
+              This is 10 numbers, for example 1234567890. It will be on tax returns and other
+              letters
+              about Self Assessment. It may be called ‘reference’, ‘UTR’ or ‘official use’.
+              You can <a href="https://www.gov.uk/find-lost-utr-number">find a lost UTR number.</a>
+            </p>
+            <div class="govuk-form-group">
+              <input class="govuk-input govuk-input--width-20" id="trn" name="SA_UTR" type="text" autocomplete="off">
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I do not have a Unique Taxpayer Reference
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          {% if data['type_of_business'] == "Partnership" %}
+          <p>Your UTR helps us identify your partnership.</p>
+          {% elseif data['type_of_business'] == "Sole trader" %} 
+          <p>Your UTR helps us identify your business.</p>
+          {% endif %}
+          <p><a href="https://www.tax.service.gov.uk/ask-for-copy-of-your-corporation-tax-utr">I cannot find my UTR</a>
+          </p>
+          {% if data['type_of_business'] == "Partnership" %}
+          <p><a href="#">My partnership does not have a UTR</a></p>
+          {% elseif data['type_of_business'] == "Sole trader" %}
+          <p><a href="#">My business does not have a UTR</a></p>
+          {% else %}
+          <p><a href="#">My business does not have a UTR</a></p>
+          {% endif %}
+
+        </div>
+      </details>
+
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+      <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+        back later</a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,969 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers before sending your application
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                Check your answers before sending your application
+                            </h1>
+                        </legend>
+                        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                            <div class="govuk-accordion__section ">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                                            Check eligibility
+                                        </span>
+                                    </h2>
+                                </div>
+                                <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-default-heading-1">
+                                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Business type
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['type_of_business']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="../business/business-entity">
+                                                    Change<span class="govuk-visually-hidden"> name</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Agricultural flat rate scheme
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['agricultural_frs']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Doing any business activities outside the UK
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['international_activities']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Involved with or taking over another business
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['business']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Land and property and races horses
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['property_racehorses']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Whos the application for
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['on_behalf']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Have an National insurance number
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['have-nino']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                VAT registration reason</dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['vat-reason']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Over the threshold in a 12 month period </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['threshold']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if data['threshold'] == "Yes" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Date that the business first gone over the threshold </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['passport-issued-month']}} / {{data['passport-issued-year']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                £85,000 in a single 30 day period in the past </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['single_30_days']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if data['single_30_days'] == "Yes" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Date of when it went over the threshold </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['single-30-day-day']}}/{{data['single-30-day-month']}}/{{data['single-30-day-year']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% endif %}
+                                        {% if data['threshold'] == "No" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                £85,000 in the next 30 days </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['next_30_day_period']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if data['next_30_day_period'] == "Yes" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Date of when it expects to go over the threshold </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['next-30-day-day']}}/{{data['next-30-day-month']}}/{{data['next-30-day-year']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% endif %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Apply for exception </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['exception']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Turnover for the next 12 months </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                &pound;{{data['estimate']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="govuk-accordion__section ">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                                            Verify the business
+                                        </span>
+                                    </h2>
+                                </div>
+                                <div id="accordion-default-content-2" class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-default-heading-2">
+                                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Full name
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['first_name']}} {{data['last_name']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> name</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Date of birth
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['dob-day']}}/{{data['dob_month']}}/{{data['dob-year']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                National insurance number
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['NINO']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                UTR number
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['SA_UTR']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="govuk-accordion__section ">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                                            About you
+                                        </span>
+                                    </h2>
+                                </div>
+                                <div id="accordion-default-content-3" class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-default-heading-3">
+                                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Role in the business
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['role']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> name</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Ever changed your name
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['changed_name']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if data['changed_name'] == "Yes" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Previous name
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['previous_first_name']}} {{data['previous_last_name']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                When did you change your name
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['previous_name_date_day']}}/{{data['previous_name_date_month']}}/{{data['previous_name_date_year']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Home address
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                3 Romford road <br>
+                                                Wellington<br>
+                                                Telford<br>
+                                                TF14ER<br>
+                                                United Kingdom
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Lived at home address for 3 years or more
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['address_3_years']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if data['address_3_years'] == "No" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Previous home address
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                10 Romford road <br>
+                                                Wellington<br>
+                                                Telford<br>
+                                                TF14ER<br>
+                                                United Kingdom
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Email address
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['email-address']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Telephone number
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['telephone-number']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="govuk-accordion__section ">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                                            About the business
+                                        </span>
+                                    </h2>
+                                </div>
+                                <div id="accordion-default-content-4" class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-default-heading-4">
+                                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Trading name
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['trading_name']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> name</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Is the business address the same as the home address
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['address_the_same']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if req.session.data['address_the_same'] == "Yes" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Business address
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                190 Romford road <br>
+                                                Wellington<br>
+                                                Telford<br>
+                                                TF14ER<br>
+                                                United Kingdom
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Business telephone number
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['business-telephone-number']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Does the business have a website?
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['have-website']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if req.session.data['have-website'] == "Yes" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Website URL
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['website-url']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Contract preference
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['contact_preference']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Business acitivity
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['more-detail']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                SIC codes
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                Mushroom growing <br>
+                                                Onion growing
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Main business acitivity
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['main_income']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Involved with any other business?
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['business_involvements']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if req.session.data['business_involvements'] == "Yes" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Name of business
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['business-name-other']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Have a VAT number?
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['have-vat-number']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if req.session.data['have-vat-number'] == "Yes" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                VAT number
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['vat_number']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Business still actively trading?
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['still_trading']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Trade taxable sales outside the EU?
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['imports_exports']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if req.session.data['imports_exports'] == "Yes" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Apply for an EORI number?
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['eori_number']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Zero rated goods turnover
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['next-12-months-turnover']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Regularly claim VAT refunds from HMRC
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['exceed']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Have a bank account for the business
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['bank']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if req.session.data['bank'] == "No" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Reason for not having a bank account for the business
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['reason']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% else %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Personal or business bank account
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['type_of_account']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Bank account details
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['name-on-the-account']}}<br>
+                                                {{data['sort-code']}}<br>
+                                                {{data['account-number']}}<br>
+                                                {{data['roll-number']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="govuk-accordion__section ">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                                            VAT registration
+                                        </span>
+                                    </h2>
+                                </div>
+                                <div id="accordion-default-content-4" class="govuk-accordion__section-content"
+                                    aria-labelledby="accordion-default-heading-4">
+                                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Registration date
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {% if req.session.data['reg_date'] == "An earlier date" %}
+                                                {{data['reg_date_day']}}/{{data['reg_date_month']}}/{{data['reg_date_year']}}
+                                                {% else %}
+                                                {{data['reg_date']}}
+                                                {% endif %}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> name</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                VAT return frequency
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['stagger']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Apply for the flate rate scheme?
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['flat_rate']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if data['flat_rate'] == "Yes" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Spend more than £250 on relevant goods over the next 3 months?
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['relevant-goods']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if req.session.data['relevant-goods'] == "Yes" %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Esitmated businesses total sales of relevant goods
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {[data['total-sales']]}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Spend more than [figure] on relevant goods over the next 3 months
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['relevant-goods-sales']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="#">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Apply for the Annual Accounting Scheme?
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['accounting_scheme']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link"
+                                                    href="../company_details/annual-accounting-scheme">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% if data['accounting_scheme'] == "Yes" %}
+
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Period end
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['period_end']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="../company_details/period-end">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Payment frequency
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['payment_frequency']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="../company_details/payment-frequency">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Payment method
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{data['payment_method']}}
+                                            </dd>
+                                            <dd class="govuk-summary-list__actions">
+                                                <a class="govuk-link" href="../company_details/payment-method">
+                                                    Change
+                                                </a>
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Confirm and submit
+            </button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

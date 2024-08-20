@@ -1,0 +1,761 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers before sending your application
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                                Check your answers before sending your application
+                            </h1>
+                        </legend>
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Business type
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['type_of_business']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../business-entity">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Agricultural Flat Rate Scheme
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['agricultural_frs']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../agricultural-flat-rate">
+                                        Change<span class="govuk-visually-hidden"> date of birth</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    International activities over the next 12 months
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['international-activities']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../international-business">
+                                        Change<span class="govuk-visually-hidden"> date of birth</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Been involved with another business or taken over a VAT-registered business
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['business-status']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../involved-more-business-status">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Land and property or own race horses
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['own-racehorses-buy-sell-propety']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../own-racehorses-buy-sell-property">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Annual Accounting Scheme
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['international-activities']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../annual-accounting">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Gone over threshold in any 12 month period
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['threshold']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../gone-over-threshold">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    What month did the business first go over the threshold?
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    01 July 2020
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../gone-over-threshold">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    £85,000 in a single 30 day period </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Yes/no
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../more-than-85k-single-30-days">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    What month did the business first go over the threshold?
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    01 July 2020
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../more-than-85k-single-30-days">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    £85,000 in the next 30 days </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Yes/no
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../more-than-85k-next-30-days">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    What month did the business first go over the threshold?
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    01 July 2020
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../more-than-85k-next-30-days">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Turnover for the next 12 months </dt>
+                                <dd class="govuk-summary-list__value">
+                                    £800000
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="#">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Selling mainly zero rated goods or services
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['zero-rated-sales']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../zero-rated-sales">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Whos the application for
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['on-behalf']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../whos-the-application-for">
+                                        Change<span class="govuk-visually-hidden"> date of birth</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Have an National Insurance Number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['have-nino']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../have-nino">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <br>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Company registration number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['company_number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../what-is-the-companies-reg-number">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Unique Taxpayer Reference number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['CT_UTR']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../CT-UTR">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Full name </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['first_name']}} {{data['last_name']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../personal-information">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    National Insurance Number </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Answer
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../personal-information">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Date of birth</dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['dob-day']}} / {{data['dob-month']}} / {{data['dob-year']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../personal-information">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Role in the business </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['role']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../whats-the-role-in-business">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Ever changed your name</dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['changed_name']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../any-previous-names">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Previous name</dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['previous-name']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../any-previous-names">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Home address</dt>
+                                <dd class="govuk-summary-list__value">
+                                    3 Romford road<br>
+                                    Wellington<br>
+                                    Telford<br>
+                                    TF14ER<br>
+                                    United Kingdom
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../post-code-lookup">
+                                        Change<span class="govuk-visually-hidden"> contact details</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Lived at home address for 3 years or more
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['address_3_years']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../lived-at-address-less-3-years">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Previous home address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    8 Romford road<br>
+                                    Wellington<br>
+                                    Telford<br>
+                                    TF14ER<br>
+                                    United Kingdom
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../previous-address-lookup">
+                                        Change<span class="govuk-visually-hidden"> date of birth</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Email address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['email-address']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../email-address">
+                                        Change<span class="govuk-visually-hidden"> date of birth</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Telephone number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['telephone-number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../telephone-number">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Trading name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['organisation-name']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../trading-name">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Business address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    8 Romford road <br>
+                                    Wellington <br>
+                                    Telford <br>
+                                    TF14ER <br>
+                                    United Kingdom
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../previous-address">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Business mobile number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['business-telephone-number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../business-mobile-number">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Have a website
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['website']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../business-website-url">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Contact preference
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['contact_preference']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../contact-preference">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    What does the business do
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['more-detail']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../business-activities">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    SIC codes
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Growing of fibre crops <br>
+                                    Growing of other non-perennial crops
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../sic-code-search">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Main business activity
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['main_income']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../sic-code-search">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Turnover for the next 12 months
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['next-12-months-turnover']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../total-value-turnover-next-12-months">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Zero rated turnover for the next 12 months
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['zero-ratednext-12-months-turnover']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../zero-rated-turnover">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Zero rated turnover for the next 12 months
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['zero-ratednext-12-months-turnover']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../zero-rated-turnover">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Expect to claim VAT refunds regularly
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['exceed']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../regularly-exceed-on-vat-purchases">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Buy or sell goods to another EU member states
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['eu-member']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../buy-or-sell-to-another-eu-member">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Trade VAT taxable goods with counties outside the EU?
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['exceed']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../imports-or-exports">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    VAT registration date
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['passport-issued-day']}} / {{data['passport-issued-month']}} /
+                                    {{data['passport-issued-year']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../vat-registration-date">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    VAT return staggers
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['staggers']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../vat-staggers">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Have a business bank account set up
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['bank']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../bank-set-up">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Reason for the bank account not being set up
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['reason']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../reason-for-no-bank-account">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Type of bank account
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['bank-type']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../personal-or-business">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Bank details
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['name-on-the-account']}} <br>
+                                    {{data['sort-code']}} <br>
+                                    {{data['account-number']}} <br>
+                                    {{data['roll-number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../bank-details">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Register for the Flat Rate Scheme
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['flat_rate']}} <br>
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../join-flat-rate">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Spend £250 on relevant goods in the next 3 months
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['relevant-goods']}} <br>
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../relevant-goods">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Estimated total sales for next 3 months
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['total-sales']}} <br>
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../total-sales-next-3-months">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                   Spend more than [figure] in next 3 months on relevant goods
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['relevant-goods-sales']}} <br>
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../relevant-goods-sales">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    VAT flat rate percentage
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    11% <br>
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../flat-rate-percentage">
+                                        Change<span class="govuk-visually-hidden"> address</span>
+                                    </a>
+                                </dd>
+                            </div>
+
+
+
+                        </dl>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Confirm and submit
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

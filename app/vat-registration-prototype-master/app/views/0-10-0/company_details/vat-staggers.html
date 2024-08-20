@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+When will the business do its VAT Returns?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">VAT registration</span>
+                            <h1 class="govuk-fieldset__heading">
+                                When will the business do its VAT Returns?
+                            </h1>
+                        </legend>
+                        <p>
+                            VAT Returns are usually done quarterly. The quarters you choose are known as the VAT ‘stagger’.
+                        </p>
+                        <p>
+                            Choose whichever stagger is the most convenient.
+                        </p>
+                        <div class="govuk-radios govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="stagger" name="stagger"
+                                    type="radio" value="Monthly">
+                                <label class="govuk-label govuk-radios__label" for="stagger">
+                                    Monthly
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="stagger-2" name="stagger"
+                                    type="radio" value="January, April, July and October">
+                                <label class="govuk-label govuk-radios__label" for="stagger-2">
+                                    January, April, July and October
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="stagger-2" name="stagger"
+                                    type="radio" value="February, May, August and November">
+                                <label class="govuk-label govuk-radios__label" for="stagger-2">
+                                    February, May, August and November
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="stagger-2" name="stagger"
+                                    type="radio" value="March, June, September and December">
+                                <label class="govuk-label govuk-radios__label" for="stagger-2">
+                                    March, June, September and December
+                                </label>
+                            </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Change Swales Limited details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-xl">Check your answers</h1>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Business name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Swales Limited
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="business-name.html">
+                        Change<span class="govuk-visually-hidden"> business name</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    VAT number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    1234567890
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="vat-number.html">
+                        Change<span class="govuk-visually-hidden"> VAT number</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Still actively trading
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Yes
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="still-trading.html">
+                        Change<span class="govuk-visually-hidden"> Still actively trading</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+
+        <form method="post">
+
+            <input type="hidden" name="answers-checked" value="true">
+
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

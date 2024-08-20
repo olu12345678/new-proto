@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Is the business applying for the Annual Accounting Scheme?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Is the business applying for the Annual Accounting Scheme?
+                        </h1>
+                    </legend>
+
+                    <p>This scheme is an option for companies with an estimated VAT-taxable turnover of £1.35 million or
+                        less.</p>
+
+                    <p>Companies on the scheme:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>submit one VAT Return a year, rather than quarterly or monthly returns</li>
+                        <li>make monthly or quarterly payments, based on an HMRC estimate of their end-of-year VAT bill
+                        </li>
+                    </ul>
+
+                    <p>It may not suit companies that:</p>
+
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>want to keep up to date with the exact amount of VAT they owe or need to reclaim</li>
+                        <li>regularly reclaim more VAT than they charge, because they will only get one VAT refund a
+                            year </li>
+                    </ul>
+
+                    <p>Find out more about the <a href="https://www.gov.uk/vat-annual-accounting-scheme"
+                            target="_blank">Annual Accounting Scheme (opens in a new tab)</a></p>
+
+
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="annual-accounting"
+                                name="annual-accounting" type="radio" value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="annual-accounting">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="annual-accounting-2"
+                                name="annual-accounting" type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="annual-accounting-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

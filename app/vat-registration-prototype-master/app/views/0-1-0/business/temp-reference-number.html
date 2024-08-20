@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you have a temporary reference number?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">Section name</span>
+                            <h1 class="govuk-fieldset__heading">
+                                Do you have a temporary reference number?
+                            </h1>
+                        </legend>
+
+                        <p>
+                            May need to include content on what this means
+                        </p>
+
+                        <div class="govuk-form-group">
+
+                            <div class="govuk-form-group">
+                                <div class="govuk-radios govuk-radios--inline">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="temp-reference-number-yes"
+                                            name="temp-reference-number" type="radio" value="Yes">
+                                        <label class="govuk-label govuk-radios__label" for="temp-reference-number-yes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="temp-reference-number-no"
+                                            name="temp-reference-number" type="radio" value="no">
+                                        <label class="govuk-label govuk-radios__label" for="temp-reference-number-no">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save and come back later
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

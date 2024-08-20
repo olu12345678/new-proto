@@ -1,0 +1,364 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Standard Industry Classification (SIC) codes
+{% endblock %}
+
+<style>
+.multiple-choice input {
+        position: relative !important;
+    }
+
+    .filter-wrapper {
+        background-color: #DEE0E2;
+        border: 5px solid #DEE0E2;
+    }
+
+    .filter-head {
+        padding: 5px;
+    }
+
+    .filter-container {
+        background-color: #FFFFFF;
+    }
+
+    .filter-options {
+        padding: 5px;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+
+    .multiple-choice {
+        display: block;
+        float: none;
+        clear: left;
+        position: relative;
+        padding: 0 0 0 38px;
+        margin-bottom: 10px;
+    }
+
+    .filter-options {
+        padding: 5px;
+    }
+
+
+    .filter-options .multiple-choice {
+        margin-bottom: 5px;
+    }
+
+    .column-third,
+    .column-one-third {
+        float: left;
+        width: 33.33333%;
+    }
+
+    .column-two-thirds {
+        float: left;
+        width: 66.66667%;
+    }
+
+    .govuk-grid-column-full {
+        width: 100%;
+        float: left;
+    }
+
+    .lang-toggle {
+        float: none;
+        text-align: right;
+        padding: 10px 0 0 0;
+    }
+
+</style>
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post" autocomplete="off">
+            <div class="govuk-form-group">
+                <span class="govuk-caption-xl">Company information</span>
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Standard Industry Classification (SIC) codes
+                        </h1>
+                    </legend>
+                </fieldset>
+
+                <p class="govuk-heading-m"> Search for a thing that your business does</p>
+
+                <div class="govuk-form-group">
+                    <p>Enter one or two keywords (or the numerical SIC code, if you know it)
+                        For example, ‘plumbing’, ‘property management’</p>
+                    <input class="govuk-input govuk-input--width-20" id="event-name" name="event-name" type="text">
+                    <button class="govuk-button" data-module="govuk-button"
+                        style="background-color: #005ea5;">Search</button>
+                </div>
+
+                <h2 class="govuk-heading-m">
+                    Choose some things that the business does
+                </h2>
+                <p>Select as many as you want. You can refine them later.</p>
+
+                <form method="post" class="form">
+                    <div class="govuk-grid-row">
+                        <div class="filter-wrapper form-group">
+                            <div class="filter-head">
+                                <span class="govuk-bold" aria-hidden="true">Software features</span>
+                            </div>
+                            <div class="filter-container">
+                                <fieldset class="filter-options">
+                                    <legend class="visuallyhidden">Software features</legend>
+                                    <div class="multiple-choice">
+                                        <input id="VIEW_RETURN" name="VIEW_RETURN" type="checkbox" value="true">
+                                        <label class="font-xsmall" for="VIEW_RETURN">View submitted VAT returns</label>
+                                    </div>
+                                    <div class="multiple-choice">
+                                        <input id="VIEW_LIABILITIES" name="VIEW_LIABILITIES" type="checkbox" value="true">
+                                        <label class="font-xsmall" for="VIEW_LIABILITIES">Check what VAT you owe</label>
+                                    </div>
+                                    <div class="multiple-choice">
+                                        <input id="VIEW_PAYMENTS" name="VIEW_PAYMENTS" type="checkbox" value="true">
+                                        <label class="font-xsmall" for="VIEW_PAYMENTS">View VAT payment history</label>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-column-two-thirds">
+                            <div class="govuk-form-group">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th><span class="govuk-heading-s">25 results</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <br>
+
+                                <div class="govuk-form-group">
+                                    <div class="govuk-checkboxes">
+
+
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="waste" name="waste"
+                                                type="checkbox" value="carcasses">
+                                            <label class="govuk-label govuk-checkboxes__label" for="waste">
+                                                Waste from animal carcasses
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="waste-2" name="waste"
+                                                type="checkbox" value="mines">
+                                            <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                                                Waste from mines or quarries
+                                            </label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input class="govuk-checkboxes__input" id="waste-3" name="waste"
+                                                type="checkbox" value="farm">
+                                            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                                Farm or agricultural waste
+                                            </label>
+                                        </div>
+
+
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity1" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity1"
+                                                class="govuk-label govuk-checkboxes__label">Broad bean growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity2" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity2"
+                                                class="govuk-label govuk-checkboxes__label">Castor bean growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity3" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity3"
+                                                class="govuk-label govuk-checkboxes__label">Cereal grains growing,
+                                                except
+                                                rice</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity4" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity4"
+                                                class="govuk-label govuk-checkboxes__label">Chick pea growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity5" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity5"
+                                                class="govuk-label govuk-checkboxes__label">Colza growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity6" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity6"
+                                                class="govuk-label govuk-checkboxes__label">Cottonseed growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity7" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity7"
+                                                class="govuk-label govuk-checkboxes__label">Cow pea growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity8" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity8"
+                                                class="govuk-label govuk-checkboxes__label">Dried leguminous vegetables
+                                                growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity9" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity9"
+                                                class="govuk-label govuk-checkboxes__label">Grain maize growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity10" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity10"
+                                                class="govuk-label govuk-checkboxes__label">Groundnut growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity11" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity11"
+                                                class="govuk-label govuk-checkboxes__label">Leguminous crops
+                                                growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity12" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity12"
+                                                class="govuk-label govuk-checkboxes__label">Lentil growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity13" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity13"
+                                                class="govuk-label govuk-checkboxes__label">Linseed growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity14" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity14"
+                                                class="govuk-label govuk-checkboxes__label">Lupin growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity15" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity15"
+                                                class="govuk-label govuk-checkboxes__label">Millet growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity16" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" checked="checked"
+                                                value="false">
+                                            <label for="checkbox-business-activity16"
+                                                class="govuk-label govuk-checkboxes__label">Mushroom growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity17" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity17"
+                                                class="govuk-label govuk-checkboxes__label">Mustard seed growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity1" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity1"
+                                                class="govuk-label govuk-checkboxes__label">Niger seed growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity1" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity1"
+                                                class="govuk-label govuk-checkboxes__label">Oats growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity20" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" checked="checked"
+                                                value="false">
+                                            <label for="checkbox-business-activity20"
+                                                class="govuk-label govuk-checkboxes__label">Onion growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity21" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity21"
+                                                class="govuk-label govuk-checkboxes__label">Oil seeds growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity22" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity22"
+                                                class="govuk-label govuk-checkboxes__label">Pea growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity23" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity23"
+                                                class="govuk-label govuk-checkboxes__label">Peanut growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity24" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity24"
+                                                class="govuk-label govuk-checkboxes__label">Pigeon pea growing</label>
+                                        </div>
+                                        <div class="govuk-checkboxes__item">
+                                            <input id="checkbox-business-activity25" class="govuk-checkboxes__input"
+                                                name="business-activity-result" type="checkbox" value="false">
+                                            <label for="checkbox-business-activity25"
+                                                class="govuk-label govuk-checkboxes__label">Rape growing</label>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                                    Save and continue
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </form>
+
+    </div>
+
+    {% endblock %}

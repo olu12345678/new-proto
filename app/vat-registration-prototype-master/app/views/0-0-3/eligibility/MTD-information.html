@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+VAT is changing
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            VAT is changing
+                        </h1>
+                    </legend>
+
+                    <p>
+                        The new ‘Making Tax Digital’ (MTD) system will change the way some companies have to report
+                        their VAT.
+                    </p>
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                            Making Tax Digital (MTD) for VAT
+                        </h1>
+                    </legend>
+
+                    <p>
+                        From 1 April 2019, any company that makes more than £85,000 in VAT-taxable sales over a 12-month
+                        period must use compatible software to:
+
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>
+                                keep digital VAT records
+                            </li>
+                            <li>
+                                send VAT Returns
+                            </li>
+                        </ul>
+                    </p>
+
+                    <p>
+                        <a href="https://www.tax.service.gov.uk/making-tax-digital-software?_ga=2.71443604.640100648.1578580689-1999009171.1578306584"
+                            target="_blank">View software that is compatible with MTD for VAT (opens in a new tab)</a>
+                    </p>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

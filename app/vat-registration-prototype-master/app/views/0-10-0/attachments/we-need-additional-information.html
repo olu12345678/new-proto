@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+How would you like to upload the additional documents?
+{% endblock %}
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            How would you like to upload the additional documents?
+        </h1>
+        <p> To be able to verify your identity, we need some additional information from you </p>
+        <form method="post">
+            <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="additional-information" name="additional-information"
+                        type="radio" value="Upload the documents using this service">
+                    <label class="govuk-label govuk-radios__label" for="additional-information">
+                        Upload the documents using this service
+                    </label>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="additional-information-2" name="additional-information"
+                        type="radio" value="Post a copy of the documents to HMRC">
+                    <label class="govuk-label govuk-radios__label" for="additional-information-2">
+                        Post a copy of the documents to HMRC
+                    </label>
+                </div>
+            </div>
+            <br>
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

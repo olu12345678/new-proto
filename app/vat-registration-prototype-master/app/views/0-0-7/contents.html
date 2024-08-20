@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Contents page
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .page-inner {
+        border: 1px solid #000;
+        width: 100%;
+        overflow: hidden;
+        height: 250px;
+        box-sizing: border-box;
+        background: #fff url(/psr-prototype/public/loader.svg) 50% 50% no-repeat;
+    }
+
+    .page {
+        margin: 0 10px 40px 0;
+        display: inline-block;
+        width: calc(50% - 10px);
+        position: relative;
+        box-sizing: border-box;
+        float: left;
+    }
+
+    .page:nth-of-type(even) {
+        margin: 0 0 40px 10px;
+    }
+
+    .page a {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        float: left;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    #userJourneyFrames {
+        width: 300%;
+        height: 300%;
+        transform: scale(0.33333);
+        transform-origin: 0 0;
+        background: none;
+        border: 0;
+    }
+</style>
+
+<main id="content" role="main">
+    <div class="grid-row">
+
+        <div class="column-full">
+            <h1 class="govuk-heading-xl">Contents Page</h1>
+
+            <div class="govuk-tabs" data-module="govuk-tabs">
+                <h2 class="govuk-tabs__title">
+                    Contents
+                </h2>
+                <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                        <a class="govuk-tabs__tab" href="#guidance">
+                            Guidance Pages
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#journey">
+                            Journey pages
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#error">
+                            Error Pages
+                        </a>
+                    </li>
+                </ul>
+                <section class="govuk-tabs__panel" id="guidance">
+                    <h2 class="govuk-heading-l">Guidance Pages</h2>
+
+                    <ul>
+
+                        <li class="page page--playlist">
+                            <a target="_blank" href="guidance/overview">Guidance - Overview</a>
+                            <div class="page-inner">
+                                <iframe id="userJourneyFrames" src="guidance/overview"></iframe>
+                            </div>
+                        </li>
+                        <li class="page page--playlist">
+                            <a target="_blank" href="guidance/how-to-register">Guidance - How to register</a>
+                            <div class="page-inner">
+                                <iframe id="userJourneyFrames" src="guidance/how-to-register"></iframe>
+                            </div>
+                        </li>
+                        <li class="page page--playlist">
+                            <a target="_blank" href="guidance/when-to-register">Guidance - When to register</a>
+                            <div class="page-inner">
+                                <iframe id="userJourneyFrames" src="guidance/when-to-register"></iframe>
+                            </div>
+                        </li>
+                        <li class="page page--playlist">
+                            <a target="_blank" href="guidance/registering-vat-other-eu-countries">Guidance - registering
+                                vat other eu countries</a>
+                            <div class="page-inner">
+                                <iframe id="userJourneyFrames"
+                                    src="guidance/registering-vat-other-eu-countries"></iframe>
+                            </div>
+                        </li>
+                        <li class="page page--playlist">
+                            <a target="_blank" href="guidance/calculate-turnover">Guidance - Calculate turnover</a>
+                            <div class="page-inner">
+                                <iframe id="userJourneyFrames" src="guidance/calculate-turnover"></iframe>
+                            </div>
+                        </li>
+                        <li class="page page--playlist">
+                            <a target="_blank" href="guidance/purchases-made-before-registration">Guidance - purchases
+                                made before registration</a>
+                            <div class="page-inner">
+                                <iframe id="userJourneyFrames"
+                                    src="guidance/purchases-made-before-registration"></iframe>
+                            </div>
+                        </li>
+                        <li class="page page--playlist">
+                            <a target="_blank" href="guidance/changes-to-your-details">Guidance - changes to your
+                                details</a>
+                            <div class="page-inner">
+                                <iframe id="userJourneyFrames" src="guidance/changes-to-your-details"></iframe>
+                            </div>
+                        </li>
+                        <li class="page page--playlist">
+                            <a target="_blank" href="guidance/cancel-registration">Guidance - cancel registration</a>
+                            <div class="page-inner">
+                                <iframe id="userJourneyFrames" src="guidance/cancel-registration"></iframe>
+                            </div>
+                        </li><li class="page page--playlist">
+                            <a target="_blank" href="guidance/transfer-registration">Guidance - transfer registration</a>
+                            <div class="page-inner">
+                                <iframe id="userJourneyFrames" src="guidance/transfer-registration"></iframe>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="clear"></div>
+                </section>
+                <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="journey">
+                    <h2 class="govuk-heading-l">Journey Pages</h2>
+
+                    <p>Coming soon</p>
+
+                    <div class="clear"></div>
+
+                </section>
+                <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="error">
+                    <h2 class="govuk-heading-l">Error Pages</h2>
+
+                    <p>Coming soon</p>
+
+                    <div class="clear"></div>
+
+                </section>
+                <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="email">
+                    <h2 class="govuk-heading-l">Emails</h2>
+
+                    <p>To be completed</p>
+
+                </section>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

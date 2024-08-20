@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you expect the business to regularly claim VAT refunds from HMRC?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                Do you expect the business to regularly claim VAT refunds from HMRC?
+                            </h1>
+                        </legend>
+                        <p> Most businesses do not claim VAT refunds. It's only possible when the VAT a business pays on
+                            business-related purchases is more than the VAT it charges customers.</p>
+                        <details class="govuk-details" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Show me an example
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                If a business sells mainly zero-rated items (the VAT on them is 0%), it may pay more VAT
+                                to run its business than it can charge. For example, most books are zero-rated, so a
+                                bookshop may find itself in this situation.
+                            </div>
+                        </details>
+                        <div class="govuk-radios govuk-radios--inline">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exceed" name="exceed" type="radio" value="Yes">
+                                <label class="govuk-label govuk-radios__label" for="exceed">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exceed-2" name="exceed" type="radio" value="No">
+                                <label class="govuk-label govuk-radios__label" for="exceed-2">
+                                    No
+                                </label>
+                            </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

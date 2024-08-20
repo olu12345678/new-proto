@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+SWALES LTD must register for VAT using a different service
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Does SWALES LTD sell mainly zero-rated goods or services?
+                        </h1>
+                    </legend>
+
+                    <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Examples of zero-rated goods or services
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <p>Zero-rated goods and services are VAT-taxable but the VAT rate on them is 0%.</p>
+                            <p>
+                                They include:
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>
+                                        most food and drink (but not things like alcoholic drinks, confectionery, crisps
+                                        and savoury snacks, hot food, sports drinks, hot takeaways, ice cream, soft
+                                        drinks and mineral water)
+                                    </li>
+                                    <li>
+                                        books and newspapers
+                                    </li>
+                                    <li>
+                                        printing services for brochures, leaflets or pamphlets
+                                    </li>
+                                    <li>
+                                        children’s clothes and shoes
+                                    </li>
+                                    <li>
+                                        most goods you export to non-EU countries
+                                    </li>
+                                </ul>
+                            </p>
+
+                            <p><a href="https://www.gov.uk/guidance/rates-of-vat-on-different-goods-and-services"
+                                    target="_blank"> Find out about VAT rates on different goods and services (opens in
+                                    new window).</a></p>
+
+                        </div>
+                    </details>
+
+
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item" data-target="date-fields">
+                            <input class="govuk-radios__input" id="threshold-yes" name="zero_rated" type="radio"
+                                value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="threshold-yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="thresold-no" name="zero_rated" type="radio"
+                                value="No">
+                            <label class="govuk-label govuk-radios__label" for="thresold-no">
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <button class="govuk-button" data-module="govuk-button">
+                        Save and continue
+                    </button>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

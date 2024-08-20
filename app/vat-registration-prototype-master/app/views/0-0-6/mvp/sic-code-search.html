@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Standard Industry Classification (SIC) codes
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post" autocomplete="off">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Standard Industry Classification (SIC) codes
+                        </h1>
+                    </legend>
+                </fieldset>
+
+                <p class="govuk-heading-m"> Search for a thing that your business does</p>
+
+                <div class="govuk-form-group">
+                    <p>Enter one or two keywords (or the numerical SIC code, if you know it)
+                        For example, ‘plumbing’, ‘property management’</p>
+                    <input class="govuk-input govuk-input--width-20" id="event-name" name="event-name" type="text">
+
+                    <a href="sic-code-results.html" class="govuk-button"
+                        style="background-color: #005ea5;">Search</a>
+                </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

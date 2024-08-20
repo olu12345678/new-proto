@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What type of business are you registering?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">Organisation details</span>
+                            <h1 class="govuk-fieldset__heading">
+                                What type of business do you want to register for VAT?
+                            </h1>
+                        </legend>
+
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="limited_company" name="type_of_business"
+                                    type="radio" value="Limited company">
+                                <label class="govuk-label govuk-radios__label" for="limited_company">
+                                    Limited company
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="sole_trader" name="type_of_business" type="radio"
+                                    value="Sole trader">
+                                <label class="govuk-label govuk-radios__label" for="sole_trader">
+                                    Sole trader
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="partnership" name="type_of_business" type="radio"
+                                    value="Partnership">
+                                <label class="govuk-label govuk-radios__label" for="partnership">
+                                    Partnership
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="other" name="type_of_business" type="radio"
+                                    value="Other">
+                                <label class="govuk-label govuk-radios__label" for="other">
+                                    Other
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Is the business selling any assets?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Is the business selling any assets?
+                        </h1>
+                    </legend>
+
+                    <p>You must register for VAT if the business is selling any assets and reaches the VAT threshold.</p>
+                    <p>
+                        Assets can include:
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>
+                                <a class="govuk-link">land and property</a>
+                              </li>
+                              <li>
+                                <a class="govuk-link">equipment and machinery</a>
+                              </li>
+                              <li>
+                                <a class="govuk-link">shares</a>
+                              </li>
+                              
+                        </ul>
+                    </p>
+
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="assets" name="assets" type="radio" value="yes">
+                            <label class="govuk-label govuk-radios__label" for="agricultural">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="assets-2" name="assets" type="radio" value="no">
+                            <label class="govuk-label govuk-radios__label" for="assets-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

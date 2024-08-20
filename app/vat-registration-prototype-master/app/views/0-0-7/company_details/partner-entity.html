@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Enter your details
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">Partner details</span>
+                            <h1 class="govuk-fieldset__heading">
+                                What type of entity is the second partner?
+                            </h1>
+                        </legend>
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="sole_trader" name="partner_entity_type" type="radio"
+                                    value="Sole trader">
+                                <label class="govuk-label govuk-radios__label" for="sole_trader">
+                                    Sole trader
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="netp" name="partner_entity_type" type="radio" value="NETP">
+                                <label class="govuk-label govuk-radios__label" for="netp">
+                                    NETP
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="limited_company" name="partner_entity_type" type="radio"
+                                    value="Limited company">
+                                <label class="govuk-label govuk-radios__label" for="limited_company">
+                                    Limited company
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="scottish_partnership" name="partner_entity_type" type="radio"
+                                    value="Scottish partnership">
+                                <label class="govuk-label govuk-radios__label" for="scottish_partnership">
+                                    Scottish partnership
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="scottish_limited_partnership" name="partner_entity_type" type="radio"
+                                    value="Scottish limited partnership">
+                                <label class="govuk-label govuk-radios__label" for="scottish_limited_partnership">
+                                    Scottish limited partnership
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="entity-6" name="partner_entity_type" type="radio" value="Limited liability partnership">
+                                <label class="govuk-label govuk-radios__label" for="limited_liability_partnership">
+                                    Limited liability partnership
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="cio" name="partner_entity_type" type="radio"
+                                    value="CIO">
+                                <label class="govuk-label govuk-radios__label" for="cio">
+                                    CIO
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="registered_society" name="partner_entity_type" type="radio" value="Registered society">
+                                <label class="govuk-label govuk-radios__label" for="registered_society">
+                                    Registered society
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                back later</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

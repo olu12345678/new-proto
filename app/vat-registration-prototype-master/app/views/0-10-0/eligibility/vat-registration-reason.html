@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Why does the business want to register for VAT?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Why do you want to register the business for VAT?
+                        </h1>
+                    </legend>
+
+                    <!-- <p>The business wants to register for VAT because it is:</p> -->
+
+                    <div class="govuk-radios govuk-radios--inline">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="vat-reason-3" name="vat-reason" type="radio"
+                                value="selling goods or services and needs or wants to charge VAT to customers">
+                            <label class="govuk-label govuk-radios__label" for="vat-reason-3">
+                                It's selling goods or services and needs or wants to charge VAT to customers
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="vat-reason" name="vat-reason" type="radio"
+                                value=" taking over a VAT registered business as a Transfer of a Going Concern">
+                            <label class="govuk-label govuk-radios__label" for="vat-reason">
+                                It's taking over a VAT registered business as a Transfer of a Going Concern
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="vat-reason-1" name="vat-reason" type="radio"
+                                value="changing the legal entity of a VAT registered business (for example, from sole trader to limited company)">
+                            <label class="govuk-label govuk-radios__label" for="vat-reason-1">
+                                You're changing the legal entity of the business (for example, from sole trader to
+                                limited company)
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="vat-reason-2" name="vat-reason" type="radio"
+                                value="setting up a VAT group">
+                            <label class="govuk-label govuk-radios__label" for="vat-reason-2">
+                                You're <a
+                                href="https://www.gov.uk/guidance/vat-registration-for-groups-divisions-and-joint-ventures">setting
+                            up a VAT group (opens in a new window)</a>
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="vat-reason-4" name="vat-reason" type="radio"
+                                value="established or has a fixed establishment in the UK and makes or intends to make taxable supplies only outside the UK">
+                            <label class="govuk-label govuk-radios__label" for="vat-reason-4">
+                                It's established or has a fixed establishment in the UK and makes or intends to make taxable
+                                supplies outside the UK only
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

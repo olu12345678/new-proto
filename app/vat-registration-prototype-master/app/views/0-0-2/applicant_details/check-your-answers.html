@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+                <form method="post">
+                    <div class="govuk-form-group">
+
+                        <h1 class="govuk-heading-xl">Check your answers</h1>
+
+
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Role in the business
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['role']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../applicant_details/whats-the-role-in-business.html">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Has {{data['first_name']}}  ever changed their name?
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['changed_name']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../applicant_details/any-previous-names.html">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% if data['changed_name'] == "yes" %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Previous name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['previous_first_name']}} {{data['previous_last_name']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../applicant_details/whats-the-previous-name.html">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% endif %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Home address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    3 Romford Road <br>
+                                    Wellington <br>
+                                    Telford <br>
+                                    TF14ER</br>
+                                    United Kingdom
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../applicant_details/choose-home-address.html">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Lived at the address less than 3 years?
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['address_3_years']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link"
+                                        href="../applicant_details/lived-at-address-less-3-years.html">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% if data['address_3_years'] == "yes" %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Previous address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    10 Romford Road <br>
+                                    Wellington <br>
+                                    Telford <br>
+                                    TF14ER</br>
+                                    United Kingdom
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../applicant_details/choose-previous-address.html">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% endif %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Email address
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['email-address']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../applicant_details/email-address.html">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Telephone number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['telephone-number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="../applicant_details/telephone-number.html">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                        </dl>
+                        <button class="govuk-button" data-module="govuk-button">
+                            Confirm and continue
+                        </button>
+                        <a href="../save-and-return/progress-saved.html"
+                            class="govuk-button govuk-button--secondary">Save and come
+                            back later
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}

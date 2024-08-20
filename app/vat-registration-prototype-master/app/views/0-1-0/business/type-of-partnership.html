@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What type of partnership are you reigstering?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">Organisation details</span>
+                            <h1 class="govuk-fieldset__heading">
+                                What type of partnership are you registering?
+                            </h1>
+                        </legend>
+                        <details class="govuk-details" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    What is my partnership type?
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+
+
+                                <p><span class="govuk-body govuk-!-font-weight-bold">General partnership</span><br>Made
+                                    up of 2 or more people, usually sole traders. One of the partners will be
+                                    ‘nominated’ to deal with HMRC. Has no legal existence distinct from the partners
+                                    themselves. Most partnerships are of this type.</p>
+
+                                <p><span class="govuk-body govuk-!-font-weight-bold">Limited liability
+                                        partnership</span><br>Must be registered at Companies House. Taxed as
+                                    partnerships but have the benefits of being a corporate entity. All the partners
+                                    have limited liability for debts.</p>
+
+                                <p><span class="govuk-body govuk-!-font-weight-bold">Limited partnership</span><br>Made
+                                    up of general and limited partners. Must register with Companies House but does not
+                                    have to file an annual return. The limited partners will have limited liability for
+                                    debts.</p>
+
+                                <p><span class="govuk-body govuk-!-font-weight-bold">Scottish partnership</span><br>Same
+                                    as a general partnership but is a separate legal entity distinct from the partners
+                                    themselves. The business address must be registered in Scotland.</p>
+
+                                <p><span class="govuk-body govuk-!-font-weight-bold">Scottish liability
+                                        partnership</span><br>Similar to a limited partnership. Made up of general and
+                                    limited partners. It has a separate legal entity and the limited partners have
+                                    limited liability for debts. The business address must be registered in Scotland.
+                                </p>
+
+
+                            </div>
+                        </details>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="general_partnership" name="type_of_partnership"
+                                type="radio" value="General partnership">
+                            <label class="govuk-label govuk-radios__label" for="general_partnership">
+                                General partnership
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="limited_liability_partnership"
+                                name="type_of_partnership" type="radio" value="Limited liability partnership">
+                            <label class="govuk-label govuk-radios__label" for="limited_liability_partnership">
+                                Limited liability partnership
+                            </label>
+                        </div>
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="limited_partnership" name="type_of_partnership"
+                                    type="radio" value="Limited partnership">
+                                <label class="govuk-label govuk-radios__label" for="limited_partnership">
+                                    Limited partnership
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="scottish_partnership" name="type_of_partnership"
+                                    type="radio" value="Scottish partnership">
+                                <label class="govuk-label govuk-radios__label" for="scottish_partnership">
+                                    Scottish partnership
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="other" name="type_of_partnership" type="radio"
+                                    value="Scottish limited partnership">
+                                <label class="govuk-label govuk-radios__label" for="other">
+                                    Scottish limited partnership
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save and come back later
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

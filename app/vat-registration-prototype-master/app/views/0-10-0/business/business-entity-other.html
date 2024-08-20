@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What type of business are you reigstering?
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                What type of business do you want to register for VAT?
+                            </h1>
+                        </legend>
+                        <details class="govuk-details" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Business type descriptions
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+
+                                <p><b>Charitable Incorporated Organisation (CIO)</b><br>A legal entity for a registered charity. CIOs provide the benefits of incorporation but the organisation only needs to be registered with the Charity Commission and not Companies House.</p>
+                                <p><b>Trust (non-incorporated)</b><br>Unincorporated with no legal identity of its own. A trust holds assets on behalf of an individual or another organisation and governs how they are to be used. Run by a group of people called trustees.</p>
+                                <p><b>Registered Society</b><br>There are different kinds of registered societies, for example, Industrial and Provident Society, Co-operative Society (Co-op) and Community Benefit Society (BenCom).  They have limited liability in the same way as companies.</p>
+                                <p><b>Unincorporated Association</b><br>Groups that agree, or ‘contract’, to come together for a specific purpose. They normally have a constitution setting out the purpose for which the association has been set up and the rules for the association and its members. </p>
+                                <p><b>Government Organisation or Public Body</b><br>A government organisation includes central and all local governments and their departments. A public body is a formally established organisation that is publicly funded to deliver a public or government service, though not as a ministerial department.</p>
+                                <p><b>Division</b><br>A business entity which is part of a larger group. It has 2 or more branches performing different functions or trading in different geographical regions.</p>
+
+                            </div>
+                        </details>
+                        <div class="govuk-radios">
+
+                            {% if data['fixed_establishment'] == "No" %}
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="individual" name="type_of_business" type="radio"
+                                    value="Individual">
+                                <label class="govuk-label govuk-radios__label" for="individual">
+                                    Individual (NETP or Foreign National)
+                                </label>
+                            </div>
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="non_uk_company" name="type_of_business"
+                                    type="radio" value="Non UK Company">
+                                <label class="govuk-label govuk-radios__label" for="non_UK_company">
+                                    Non UK Company, not established in UK
+                                </label>
+                            </div>
+                            {% endif %}
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="CIO" name="type_of_business" type="radio"
+                                    value="Charitable Incorporated Organisation (CIO)">
+                                <label class="govuk-label govuk-radios__label" for="CIO">
+                                    Charitable Incorporated Organisation (CIO)
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="trust" name="type_of_business" type="radio"
+                                    value="Trust (non-incorporated)">
+                                <label class="govuk-label govuk-radios__label" for="trust">
+                                    Trust (non-incorporated)
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="registered_society" name="type_of_business"
+                                    type="radio" value="Registered Society">
+                                <label class="govuk-label govuk-radios__label" for="registered_society">
+                                    Registered Society
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="unincorporated_association"
+                                    name="type_of_business" type="radio" value="Unincorporated Association">
+                                <label class="govuk-label govuk-radios__label" for="unincorporated_association">
+                                    Unincorporated Association
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="government_organisation" name="type_of_business"
+                                    type="radio" value="Government Organisation or Public Body">
+                                <label class="govuk-label govuk-radios__label" for="government_organisation">
+                                    Government Organisation or Public Body
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="division" name="type_of_business" type="radio"
+                                    value="Division">
+                                <label class="govuk-label govuk-radios__label" for="division">
+                                    Division
+                                </label>
+                            </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="vat_group" name="type_of_business" type="radio"
+                                        value="VAT group">
+                                    <label class="govuk-label govuk-radios__label" for="vat_group">
+                                        VAT group 
+                                    </label>
+                                    <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                        A group of related companies (where one is under the control of the others) registering to submit a VAT return together. For example, a parent company that has a subsidiary or subsidiaries.
+                                      </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <button class="govuk-button" data-module="govuk-button">
+               Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

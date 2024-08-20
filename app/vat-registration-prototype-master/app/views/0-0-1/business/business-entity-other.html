@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What type of business are you reigstering?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form method="post">
+            <div class="govuk-form-group">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <span class="govuk-caption-xl">Section name</span>
+                            <h1 class="govuk-fieldset__heading">
+                                What type of business are you reigstering?
+                            </h1>
+                        </legend>
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="gov_org" name="type_of_business" type="radio"
+                                    value="Government organisation or public body">
+                                <label class="govuk-label govuk-radios__label" for="gov_org">
+                                    Government organisation or public body
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="trust" name="type_of_business" type="radio"
+                                    value="Trust">
+                                <label class="govuk-label govuk-radios__label" for="trust">
+                                    Trust
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="unincorporated_associations"
+                                    name="type_of_business" type="radio" value="Unincorporated Association">
+                                <label class="govuk-label govuk-radios__label" for="unincorporated_associations">
+                                    Unincorporated Association
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Save and continue
+            </button>
+
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Save and come back later
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

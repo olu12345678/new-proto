@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+The business must register for VAT using a different service
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+    </p>
+</div>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            The business must register for VAT using a different service
+                        </h1>
+                    </legend>
+                    <p>
+                        If the business:
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>
+                                does all of its business outside the UK or has its head office outside the UK - <a
+                                    href="https://tax.service.gov.uk/business-registration/select-taxes">use the online
+                                    VAT registration service</a>
+                            </li>
+                            <li>
+                                is selling assets that you have claimed a repayment of VAT under Directive 2008/9 or
+                                13th Directive refund arrangements - <a
+                                    href="https://www.gov.uk/government/publications/vat-registration-notification-vat1c">register
+                                    using form VAT1C</a>
+                            </li>
+                            <li>
+                                is selling goods located in Northern Ireland at the time of sale - <a
+                                    href="https://tax.service.gov.uk/business-registration/select-taxes">use the online
+                                    VAT registration service</a>
+                            </li>
+                            <li>
+                                is selling or moving goods from Northern Ireland to an EU member state - <a
+                                    href="https://tax.service.gov.uk/business-registration/select-taxes">Use the other
+                                    VAT registration service</a>
+                            </li>
+                            <li>
+                                is bringing goods into Northern Ireland from an EU member state - <a
+                                    href="https://www.gov.uk/government/publications/vat-application-for-registration-acquisitions-vat1b">register
+                                    using form VAT1B</a>
+                            </li>
+                            <li>
+                                is selling goods into Northern Ireland from an EU member state - <a
+                                    href="https://www.gov.uk/government/publications/vat-application-for-registration-distance-selling-vat1a">register
+                                    using form VAT1A</a>
+                            </li>
+                        </ul>
+                    </p>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

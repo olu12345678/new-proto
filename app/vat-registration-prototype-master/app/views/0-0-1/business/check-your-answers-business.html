@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds-from-desktop">
+                <form method="post">
+                    <div class="govuk-form-group">
+
+                        <h1 class="govuk-heading-xl">Check your answers</h1>
+
+
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Business type
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['type_of_business']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="business-entity">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% if data['type_of_business'] == "Limited company" %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Company number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['company_number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="business-entity">
+                                        Change<span class="govuk-visually-hidden"> name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% endif %}
+                            {% if data['type_of_business'] == "Sole trader" %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    First name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['first_name']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="personal-details">
+                                        Change<span class="govuk-visually-hidden"> first name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Last name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['last_name']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="personal-details">
+                                        Change<span class="govuk-visually-hidden"> last name</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Date of birth
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    <!-- 5 January 1978 -->
+                                    {{data['dob-day']}} {{months[dob_month-1]}} {{data['dob-year']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="personal-details">
+                                        Change<span class="govuk-visually-hidden"> date of birth</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    National insurance number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{data['national-insurance-number']}}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="national-insurance-number">
+                                        Change<span class="govuk-visually-hidden"> national insurance number</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            {% endif %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Unique Taxpayers Reference number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {% if data['SA_UTR'] %}
+                                    {{data['SA_UTR']}}
+                                    {% else %}
+                                    The business does not have a UTR
+                                    {% endif %}
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="SA-UTR">
+                                        Change<span class="govuk-visually-hidden"> unique taxpayers reference
+                                            number</span>
+                                    </a>
+                                </dd>
+                            </div>
+                        </dl>
+                        <button class="govuk-button" data-module="govuk-button">
+                            Confirm and continue
+                        </button>
+                        <a href="../save-and-return/progress-saved.html" class="govuk-button govuk-button--secondary">Save and come
+                            back later</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}
